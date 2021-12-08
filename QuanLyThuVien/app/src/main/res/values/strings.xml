@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">QuanLyThuVien</string>
+    <string name="taikhoan">Tài khoản</string>
+    <string name="matkhau">Mật khẩu</string>
 </resources>

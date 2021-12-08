@@ -4,7 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/drawable-v24/background_splash.xml" value="0.24537037037037038" />
-        <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_login.xml" value="0.12760416666666666" />
+        <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/drawable/boder_btn.xml" value="0.14322916666666666" />
+        <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/drawable/boder_dangnhap.xml" value="0.14322916666666666" />
+        <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/drawable/border_taikhoan.xml" value="0.14322916666666666" />
+        <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_main.xml" value="0.12760416666666666" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_splash.xml" value="0.25" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/app/src/main/res/layout/activity_main.xml" value="0.24635416666666668" />

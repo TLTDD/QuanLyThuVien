@@ -1,9 +1,134 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.LoginActivity">
+    tools:context=".Activity.LoginActivity"
+    android:orientation="vertical"
+    android:background="@drawable/background_login"
+    android:gravity="center">
+    <LinearLayout
+        android:padding="10dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/border_taikhoan"
+        android:layout_marginTop="150dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:fontFamily="@font/serif"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:textStyle="bold"
+            android:text="Đăng nhập"
+            android:textColor="#f20"
+            android:textSize="30sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:fontFamily="@font/serif"
+                android:textSize="16sp"
+                android:layout_margin="5dp"
+                android:id="@+id/edtTaiKhoan"
+                android:inputType="text"
+                android:hint="@string/taikhoan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:fontFamily="@font/serif"
+                android:textSize="16sp"
+                android:layout_margin="5dp"
+                android:id="@+id/edtMatKhau"
+                android:inputType="phone"
+                android:hint="@string/matkhau"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <Button
+                android:fontFamily="@font/cucho"
+                android:id="@+id/btndangnhap"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:text="Đăng nhập"
+                android:padding="15dp"
+                android:background="@drawable/border_dangnhap"
+                android:layout_marginTop="10dp"
+                android:layout_width="130dp"
+                android:layout_marginRight="10dp"
+                android:layout_height="wrap_content"/>
+            <Button
+                android:fontFamily="@font/cucho"
+                android:backgroundTint="#00FF00"
+                android:id="@+id/btndangky"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:background="@drawable/border_dangnhap"
+                android:text="Đăng ký"
+                android:padding="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <TextView
+                android:fontFamily="@font/serif"
+                android:layout_marginRight="5dp"
+                android:layout_marginLeft="5dp"
+                android:textStyle="bold"
+                android:text="Hoặc đăng nhập bằng"
+                android:textColor="#f20"
+                android:textSize="16sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:src="@drawable/google"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginRight="20dp"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:src="@drawable/facebook"
+                android:layout_width="50dp"
+                android:layout_height="50dp"/>
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:src="@drawable/twitter"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="20dp"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
