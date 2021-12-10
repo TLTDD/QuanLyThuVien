@@ -53,6 +53,12 @@ public class MainActivity extends AppCompatActivity {
                     case 1:
                         tab.setText("Sách");
                         break;
+                    case 2:
+                        tab.setText("Mượn");
+                        break;
+                    case 3:
+                        tab.setText("Bạn đọc");
+                        break;
                 }
             }
         }).attach();
