@@ -6,25 +6,49 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".Activity.Activity.MainActivity">
-    <androidx.appcompat.widget.Toolbar
-        android:fontFamily="@font/cucho"
-        android:background="@color/title"
-        app:titleTextColor="@color/white"
-        app:title="Thư viện"
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:id="@+id/drawerLayoutMain"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolBarMain"
+                android:fontFamily="@font/cucho"
+                android:background="@color/title"
+                app:titleTextColor="@color/white"
+                app:title="Thư viện"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize">
 
-    </androidx.appcompat.widget.Toolbar>
-    <com.google.android.material.tabs.TabLayout
-        android:fontFamily="@font/cucho"
-        app:tabTextColor="@color/white"
-        android:id="@+id/tabLayoutMain"
-        android:background="@color/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-    <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/viewPagerMain"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
+            </androidx.appcompat.widget.Toolbar>
+            <com.google.android.material.tabs.TabLayout
+                android:fontFamily="@font/cucho"
+                app:tabTextColor="@color/white"
+                android:id="@+id/tabLayoutMain"
+                android:background="@color/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/viewPagerMain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/navigationmain"
+            app:headerLayout="@layout/header_navigation"
+            android:layout_gravity="start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true">
+            <ListView
+                android:layout_marginTop="130dp"
+                android:id="@+id/listviewmain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            </ListView>
+        </com.google.android.material.navigation.NavigationView>
+    </androidx.drawerlayout.widget.DrawerLayout>
 </LinearLayout>
