@@ -6,10 +6,20 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".Activity.Activity.MainActivity">
+    <androidx.appcompat.widget.Toolbar
+        android:fontFamily="@font/cucho"
+        android:background="@color/title"
+        app:titleTextColor="@color/white"
+        app:title="Thư viện"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
 
+    </androidx.appcompat.widget.Toolbar>
     <com.google.android.material.tabs.TabLayout
+        android:fontFamily="@font/cucho"
+        app:tabTextColor="@color/white"
         android:id="@+id/tabLayoutMain"
-        android:background="#009688"
+        android:background="@color/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <androidx.viewpager2.widget.ViewPager2
