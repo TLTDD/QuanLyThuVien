@@ -10,13 +10,13 @@ public class Sach implements Serializable {
     public String nhaXuatBan;
     public String ngayXuatBan;
     public String ngonNgu;
-    public Integer giaSach;
+    public int giaSach;
     public String soSeries;
     public Integer soLuong;
     public String loiTua;
     public String hinhAnhSach;
 
-    public Sach(int id, int idKeSach, String tenSach, String tenTacGia,String nhaXuatBan, String ngayXuatBan, String ngonNgu, Integer giaSach, String soSeries, Integer soLuong, String loiTua,String hinhAnhSach) {
+    public Sach(int id, int idKeSach, String tenSach, String tenTacGia,String nhaXuatBan, String ngayXuatBan, String ngonNgu, int giaSach, String soSeries, Integer soLuong, String loiTua,String hinhAnhSach) {
         this.id = id;
         this.idKeSach = idKeSach;
         this.tenSach = tenSach;
@@ -95,11 +95,11 @@ public class Sach implements Serializable {
         this.ngonNgu = ngonNgu;
     }
 
-    public Integer getGiaSach() {
+    public int getGiaSach() {
         return giaSach;
     }
 
-    public void setGiaSach(Integer giaSach) {
+    public void setGiaSach(int giaSach) {
         this.giaSach = giaSach;
     }
 

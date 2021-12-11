@@ -84,7 +84,6 @@ public class SachTrongKeActivity extends AppCompatActivity {
                             hinhAnhSach = jsonObject.getString("hinhAnhSach");
                             arrayListSach.add(new Sach(id,idKeSach,tenSach,tenTacGia,nhaXuatBan,ngayXuatBan,ngonNgu,giaSach,soSeries,soLuong,loiTua,hinhAnhSach));
                             sachAdapter.notifyDataSetChanged();
-
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
