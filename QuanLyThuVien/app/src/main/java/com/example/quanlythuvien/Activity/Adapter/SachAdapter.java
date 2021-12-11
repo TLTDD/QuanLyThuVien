@@ -1,6 +1,7 @@
 package com.example.quanlythuvien.Activity.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.quanlythuvien.Activity.Activity.ChiTietSach;
 import com.example.quanlythuvien.Activity.Model.Sach;
+import com.example.quanlythuvien.Activity.Util.CheckConnection;
 import com.example.quanlythuvien.R;
 import com.squareup.picasso.Picasso;
 
@@ -62,6 +65,16 @@ public class SachAdapter extends RecyclerView.Adapter<SachAdapter.ItemHolder> {
             tvTenSach = itemView.findViewById(R.id.tvTenSach);
             tvTacGia = itemView.findViewById(R.id.tvTenTacGia);
             tvGiaSach = itemView.findViewById(R.id.tvGiaSach);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(context, ChiTietSach.class);
+                    intent.putExtra("thongtinsach",arraySach.get(getPosition()));
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    CheckConnection.ShowToast_Short(context,arraySach.get(getPosition()).getTenSach());
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }

@@ -17,6 +17,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
         <activity
+            android:name=".Activity.Activity.ChiTietSach"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Activity.SachTrongKeActivity"
             android:exported="false" />
         <activity
