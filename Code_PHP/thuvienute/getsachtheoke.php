@@ -1,22 +1,23 @@
 <?php
     include "connect.php";
+    $idKeSach = $_GET['idKeSach'];
     $mangsach = array();
-    $query = 'SELECT * FROM sach';
+    $query = "SELECT * FROM sach WHERE idKeSach = '$idKeSach'";
     $data = mysqli_query($conn, $query);
     while ($row = mysqli_fetch_assoc($data)){
         array_push($mangsach,new Sach(
-                $row['id'],
-                $row['idKeSach'],
-                $row['tenSach'],
-                $row['tenTacGia'],
-                $row['nhaXuatBan'],
-                $row['ngayXuatBan'],
-                $row['ngonNgu'],
-                $row['giaSach'],
-                $row['soSeries'],
-                $row['soLuong'],
-                $row['loiTua'],
-                $row['hinhAnhSach']));
+            $row['id'], 
+            $row['idKeSach'],
+            $row['tenSach'],
+            $row['tenTacGia'],
+            $row['nhaXuatBan'],
+            $row['ngayXuatBan'],
+            $row['ngonNgu'],
+            $row['giaSach'],
+            $row['soSeries'],
+            $row['soLuong'],
+            $row['loiTua'],
+            $row['hinhAnhSach']));
     }
     echo json_encode($mangsach);
     
