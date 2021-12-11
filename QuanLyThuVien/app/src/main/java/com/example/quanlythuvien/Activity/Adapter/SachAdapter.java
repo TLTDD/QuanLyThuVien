@@ -62,12 +62,6 @@ public class SachAdapter extends RecyclerView.Adapter<SachAdapter.ItemHolder> {
             tvTenSach = itemView.findViewById(R.id.tvTenSach);
             tvTacGia = itemView.findViewById(R.id.tvTenTacGia);
             tvGiaSach = itemView.findViewById(R.id.tvGiaSach);
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                }
-            });
         }
     }
 }

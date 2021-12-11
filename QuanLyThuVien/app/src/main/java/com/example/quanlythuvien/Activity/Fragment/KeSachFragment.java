@@ -1,9 +1,11 @@
 package com.example.quanlythuvien.Activity.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -15,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.quanlythuvien.Activity.Activity.SachTrongKeActivity;
 import com.example.quanlythuvien.Activity.Adapter.KeSachAdapter;
 import com.example.quanlythuvien.Activity.Model.KeSach;
 import com.example.quanlythuvien.Activity.Util.CheckConnection;
@@ -40,7 +43,19 @@ public class KeSachFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_kesach,container,false);
         AnhXa();
         GetDuLieuLoaiSP();
+        setItemListView();
         return view;
+    }
+
+    private void setItemListView() {
+        lvKeSach.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent= new Intent(getActivity(), SachTrongKeActivity.class);
+                intent.putExtra("idKeSach",arrayListKeSach.get(position).getId());
+                startActivity(intent);
+            }
+        });
     }
 
     private void GetDuLieuLoaiSP() {
