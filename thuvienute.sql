@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 11, 2021 lúc 01:46 AM
+-- Thời gian đã tạo: Th12 12, 2021 lúc 10:24 AM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 8.0.13
 
@@ -20,6 +20,55 @@ SET time_zone = "+00:00";
 --
 -- Cơ sở dữ liệu: `thuvienute`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `bandoc`
+--
+
+CREATE TABLE `bandoc` (
+  `id` int(11) NOT NULL,
+  `hoTen` varchar(255) NOT NULL,
+  `maSV` varchar(255) NOT NULL,
+  `lop` varchar(255) NOT NULL,
+  `ngaySinh` varchar(255) NOT NULL,
+  `gioiTinh` varchar(255) NOT NULL,
+  `diaChi` varchar(255) NOT NULL,
+  `soDienThoai` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `bandoc`
+--
+
+INSERT INTO `bandoc` (`id`, `hoTen`, `maSV`, `lop`, `ngaySinh`, `gioiTinh`, `diaChi`, `soDienThoai`, `email`) VALUES
+(1, 'Nguyễn Quang Huy', '1911505310224', '19T2', '12/12/1999', 'Nam', 'Kon Tum', '0961640909', 'huylmht10@gmail.com'),
+(2, 'Bùi Văn Sỷ', '1911505310248', '19T2', '10/6/2001', 'Nam', 'Quản Trị', '\r\n0947895039', '\r\nsybuivan1429@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Cấu trúc bảng cho bảng `chitietmuon`
+--
+
+CREATE TABLE `chitietmuon` (
+  `id` int(11) NOT NULL,
+  `maPM` int(11) NOT NULL,
+  `tenSach` varchar(255) NOT NULL,
+  `maSach` varchar(255) NOT NULL,
+  `ngayMuon` varchar(255) NOT NULL,
+  `ngayHetHan` varchar(255) NOT NULL,
+  `trangThai` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Đang đổ dữ liệu cho bảng `chitietmuon`
+--
+
+INSERT INTO `chitietmuon` (`id`, `maPM`, `tenSach`, `maSach`, `ngayMuon`, `ngayHetHan`, `trangThai`) VALUES
+(1, 1, 'Đổi Đen Thay Trắng', '3', '12/12/2021', '11/01/2021', 'Đang mượn');
 
 -- --------------------------------------------------------
 
@@ -67,7 +116,7 @@ CREATE TABLE `sach` (
 --
 
 INSERT INTO `sach` (`id`, `idKeSach`, `tenSach`, `tenTacGia`, `nhaXuatBan`, `ngayXuatBan`, `ngonNgu`, `giaSach`, `soSeries`, `soLuong`, `loiTua`, `hinhAnhSach`) VALUES
-(1, 1, 'Cây Cam Ngọt Của Tôi', 'Jose Mauro de Vasconcelos', 'Nhà Xuất Bản Hội Nhà Văn', '12/12/2012', 'Tiếng việt', 365000, '1245-1412-1452-3251', 7, 'Cây Cam Ngọt Của Tôi là tác phẩm của nhà văn người Brazil Jose Mauro de Vasconcelos. Sinh ra và lớn lên trong một gia đình nghèo ở ngoại ô Rio de Janeiro, ông phải làm đủ nghề để trang trải cho cuộc sống. \n\nKhông ban cho Mauro một gia đình giàu có nhưng trời phú cho vị tác giả này một trí nhớ phi thường, trí tưởng tượng tuyệt vời và vốn sống vô cùng phong phú. Mauro bắt đầu sáng tác từ năm 22 tuổi. Cuốn sách Cây Cam Ngọt Của Tôi của ông không chỉ thành công tại Brazil (được đưa vào chương trình tiểu học của nước này) mà còn được bán bản quyền cho hơn 20 quốc gia và chuyển thể thành phim.', 'https://lh3.googleusercontent.com/proxy/-YlXjV6a5_JSPvtVVm4clHP0KHKSd6oAhuuwinOYaUatVCs57ySrBjPLb_dwZ581HNdAJ3CLp2WnaVeHN2Vr5q_wPLQ1GU1I-4yQmml8MtptnmVy4EGy4-W0DkZw37JfT_R8-lyf'),
+(1, 1, 'Cây Cam Ngọt Của Tôi', 'Jose Mauro de Vasconcelos', 'Nhà Xuất Bản Hội Nhà Văn', '12/12/2012', 'Tiếng việt', 365000, '1245-1412-1452-3251', 7, 'Cây Cam Ngọt Của Tôi là tác phẩm của nhà văn người Brazil Jose Mauro de Vasconcelos. Sinh ra và lớn lên trong một gia đình nghèo ở ngoại ô Rio de Janeiro, ông phải làm đủ nghề để trang trải cho cuộc sống. \n\nKhông ban cho Mauro một gia đình giàu có nhưng trời phú cho vị tác giả này một trí nhớ phi thường, trí tưởng tượng tuyệt vời và vốn sống vô cùng phong phú. Mauro bắt đầu sáng tác từ năm 22 tuổi. Cuốn sách Cây Cam Ngọt Của Tôi của ông không chỉ thành công tại Brazil (được đưa vào chương trình tiểu học của nước này) mà còn được bán bản quyền cho hơn 20 quốc gia và chuyển thể thành phim.', 'https://thegioidohoa.com/wp-content/uploads/2017/08/Top-m%E1%BA%ABu-thi%E1%BA%BFt-k%E1%BA%BF-b%C3%ACa-s%C3%A1ch-%C4%91%E1%BA%B9p-l%C3%B4i-cu%E1%BB%91n.jpg'),
 (2, 2, 'Ngữ Pháp Tiếng Hàn Cơ Bản', ' Lê Huy Khoa', 'Nhà xuất bản Kim Đồng', '15/02/2008', 'Tiếng Pháp', 458000, '2547-1456-1254-1475', 9, 'NGỮ PHÁP CƠ BẢN TIẾNG HÀN của tác giả Lê Huy Khoa, hệ thống một cách đầy đủ, chính xác và khoa học nhất các kiến thức cơ bản về ngữ pháp tiếng Hàn như danh từ, động từ, tính từ…', 'https://nhasachmienphi.com/images/thumbnail/nhasachmienphi-ngu-phap-tieng-han-co-ban.jpg'),
 (3, 3, 'Đổi Đen Thay Trắng', 'Phong Lưu Thư Ngốc', 'Nhà xuất bản Hoài Nam', '14/01/2021', 'Tiếng Việt', 456000, '1455-1441-4125-2541', 5, 'Một hack cơ khi bị Chủ Thần nhìn trúng thì sẽ chỉ làm nhân vật phản diện suốt mấy nghìn năm, kiếp nào cũng sẽ tìm đến con đường chết, rơi vào kết cục bi thảm.\r\nRốt cuộc một ngày kia cũng thoát khỏi sự khống chế của hệ thống phản diện, hắn quyết định điều tra ngược lại để báo thù, nhằm thay đổi vận mệnh. \r\nDù nội tâm có rữa nát như thế nào đi chăng nữa thì ngoài mặt, hắn vẫn phải luôn đứng trên chuẩn mực đạo đức cao nhất.', 'https://nhasachmienphi.com/images/thumbnail/nhasachmienphi-cao-thu-doi-den-thay-trang.jpg'),
 (4, 2, 'Kanji Look', 'Nguyễn Việt Anh', 'NXB Từ Điển Bách Khoa', '14/02/2019', 'Tiếng Nhật', 254000, '1475-2547-1456-1425', 5, 'Kanji look and learn N3, N2 – Bản Nhật Việt được biên soạn bắt nguồn từ quyển sách Kanji Pixtographic – là cuốn sách dạy Kanji ở trình độ trung cấp N3 và N2 bằng hình ảnh cực hay. Tuy nhiên điểm hạn chế của nó là trình bày không được khoa học như cuốn Kanji look and learn và hoàn toàn bằng tiếng Anh. Vậy nên, tác giả đã ghép lại các hình ảnh từ cuốn sách này và phối hợp ghép các hình ảnh có sẵn của quyển Kanji look and learn để tạo nên một quyển sách mới, hoàn toàn tiếng Việt với cách trình bày khoa học và vô cùng dễ học với cái tên là Kanji look and learn N23 phiên bản tiếng Việt', 'https://nhasachmienphi.com/images/thumbnail/nhasachmienphi-kanji-look-and-learn-n3-n2-ban-nhat-viet.jpg'),
@@ -76,6 +125,18 @@ INSERT INTO `sach` (`id`, `idKeSach`, `tenSach`, `tenTacGia`, `nhaXuatBan`, `nga
 --
 -- Chỉ mục cho các bảng đã đổ
 --
+
+--
+-- Chỉ mục cho bảng `bandoc`
+--
+ALTER TABLE `bandoc`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Chỉ mục cho bảng `chitietmuon`
+--
+ALTER TABLE `chitietmuon`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Chỉ mục cho bảng `kesach`
@@ -92,6 +153,18 @@ ALTER TABLE `sach`
 --
 -- AUTO_INCREMENT cho các bảng đã đổ
 --
+
+--
+-- AUTO_INCREMENT cho bảng `bandoc`
+--
+ALTER TABLE `bandoc`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT cho bảng `chitietmuon`
+--
+ALTER TABLE `chitietmuon`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT cho bảng `kesach`
