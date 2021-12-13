@@ -1,4 +1,4 @@
-package com.example.quanlythuvien.Activity;
+package com.example.quanlythuvien.Activity.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;

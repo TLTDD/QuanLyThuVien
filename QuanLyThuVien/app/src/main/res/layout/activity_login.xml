@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Activity.LoginActivity"
+    tools:context=".Activity.Activity.LoginActivity"
     android:orientation="vertical"
     android:background="@drawable/background_login"
     android:gravity="center">
@@ -117,17 +117,17 @@
             android:gravity="center">
             <de.hdodenhof.circleimageview.CircleImageView
                 android:src="@drawable/google"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginRight="20dp"/>
             <de.hdodenhof.circleimageview.CircleImageView
                 android:src="@drawable/facebook"
-                android:layout_width="50dp"
-                android:layout_height="50dp"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
             <de.hdodenhof.circleimageview.CircleImageView
                 android:src="@drawable/twitter"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginLeft="20dp"/>
         </LinearLayout>
     </LinearLayout>
