@@ -1,7 +1,9 @@
 package com.example.quanlythuvien.Activity.Activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private MainViewPagerAdapter mainViewPagerAdapter;
     private Toolbar toolbarMain;
     private DrawerLayout drawerLayout;
+    private LinearLayout lnTimKiem,lnISBN,lnTaiKhoan;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +31,31 @@ public class MainActivity extends AppCompatActivity {
         AnhXa();
         TLayout();
         ActionBar();
+        OnClickMenu();
+    }
+
+    private void OnClickMenu() {
+        lnTimKiem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),TimKiemActivity.class);
+                startActivity(intent);
+            }
+        });
+        lnISBN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),MaISBNActivity.class);
+                startActivity(intent);
+            }
+        });
+        lnTaiKhoan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(),TaiKhoanActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void ActionBar() {
@@ -71,5 +99,8 @@ public class MainActivity extends AppCompatActivity {
         mViewPager2.setAdapter(mainViewPagerAdapter);
         toolbarMain = findViewById(R.id.toolBarMain);
         drawerLayout = findViewById(R.id.drawerLayoutMain);
+        lnTimKiem = findViewById(R.id.ln_search);
+        lnISBN = findViewById(R.id.ln_isbn);
+        lnTaiKhoan = findViewById(R.id.ln_tk);
     }
 }
