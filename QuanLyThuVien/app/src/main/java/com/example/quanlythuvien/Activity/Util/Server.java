@@ -7,4 +7,5 @@ public class Server {
     public static String Duongdansachtheoke = "http://" + localhost + "/thuvienute/getsachtheoke.php?idKeSach=";
     public static String Duongdanbandoc = "http://" + localhost + "/thuvienute/getbandoc.php";
     public static String Duongdanphieumuon = "http://" + localhost + "/thuvienute/getphieumuon.php";
+    public static String Duongdandangnhap = "http://" + localhost + "/thuvienute/login/login.php";
 }
