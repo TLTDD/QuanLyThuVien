@@ -26,8 +26,14 @@
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/item_phieumuon.xml" value="0.264" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/item_sach.xml" value="0.264" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/app/src/main/res/layout/activity_main.xml" value="0.24635416666666668" />
+        <entry key="..\:/LapTrinhDiDong/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_chi_tiet_sach.xml" value="0.1" />
         <entry key="..\:/LapTrinhDiDong/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_login.xml" value="0.12771739130434784" />
         <entry key="..\:/LapTrinhDiDong/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_main.xml" value="0.12771739130434784" />
+        <entry key="..\:/LapTrinhDiDong/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_sach_trong_ke.xml" value="0.1" />
+        <entry key="..\:/LapTrinhDiDong/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_splash.xml" value="0.1" />
+        <entry key="..\:/LapTrinhDiDong/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/fragment_bandoc.xml" value="0.1" />
+        <entry key="..\:/LapTrinhDiDong/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/fragment_ghichu.xml" value="0.1" />
+        <entry key="..\:/LapTrinhDiDong/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/item_kesach.xml" value="0.1" />
       </map>
     </option>
   </component>
