@@ -37,7 +37,7 @@
             android:layout_height="wrap_content">
             <EditText
                 android:fontFamily="@font/serif"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_margin="5dp"
                 android:id="@+id/edtTaiKhoan"
                 android:inputType="text"
@@ -51,11 +51,12 @@
             android:layout_height="wrap_content">
             <EditText
                 android:fontFamily="@font/serif"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:layout_margin="5dp"
                 android:id="@+id/edtMatKhau"
-                android:inputType="text"
+                android:inputType="textPassword"
                 android:hint="@string/matkhau"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
