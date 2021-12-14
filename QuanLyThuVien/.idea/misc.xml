@@ -6,13 +6,18 @@
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/drawable-v24/background_splash.xml" value="0.24537037037037038" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/drawable/boder_btn.xml" value="0.14322916666666666" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/drawable/boder_dangnhap.xml" value="0.14322916666666666" />
+        <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/drawable/border_dangnhap.xml" value="0.23333333333333334" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/drawable/border_sach.xml" value="0.13958333333333334" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/drawable/border_taikhoan.xml" value="0.14322916666666666" />
+        <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/drawable/search.xml" value="0.12447916666666667" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_chi_tiet_sach.xml" value="0.11614583333333334" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_login.xml" value="0.2" />
-        <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_main.xml" value="0.12760416666666666" />
+        <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_ma_isbnactivity.xml" value="0.264" />
+        <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_main.xml" value="0.4" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_sach_trong_ke.xml" value="0.11979166666666667" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_splash.xml" value="0.25" />
+        <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_tai_khoan.xml" value="0.176" />
+        <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_tim_kiem.xml" value="0.2" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/fragment_bandoc.xml" value="0.1234375" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/fragment_ghichu.xml" value="0.11614583333333334" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/fragment_kesach.xml" value="0.25" />
@@ -26,6 +31,7 @@
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/item_phieumuon.xml" value="0.264" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/item_sach.xml" value="0.264" />
         <entry key="..\:/LTDD/AndroidStudioProjects/QuanLyThuVien/app/src/main/res/layout/activity_main.xml" value="0.24635416666666668" />
+<<<<<<< HEAD
         <entry key="..\:/LapTrinhDiDong/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_chi_tiet_sach.xml" value="0.1" />
         <entry key="..\:/LapTrinhDiDong/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_login.xml" value="0.12771739130434784" />
         <entry key="..\:/LapTrinhDiDong/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/activity_main.xml" value="0.12771739130434784" />
@@ -34,6 +40,8 @@
         <entry key="..\:/LapTrinhDiDong/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/fragment_bandoc.xml" value="0.1" />
         <entry key="..\:/LapTrinhDiDong/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/fragment_ghichu.xml" value="0.1" />
         <entry key="..\:/LapTrinhDiDong/QuanLyThuVien/QuanLyThuVien/app/src/main/res/layout/item_kesach.xml" value="0.1" />
+=======
+>>>>>>> 1cfd8545454f2d02f16d4460bfc6905e15e13e14
       </map>
     </option>
   </component>

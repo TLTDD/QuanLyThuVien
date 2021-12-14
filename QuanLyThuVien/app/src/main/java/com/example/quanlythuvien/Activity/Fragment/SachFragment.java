@@ -41,9 +41,7 @@ public class SachFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_sach,container,false);
         AnhXa();
-
         GetDuLieuSach();
-
         return view;
     }
 

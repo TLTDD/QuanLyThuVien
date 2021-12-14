@@ -29,6 +29,11 @@ public class SachAdapter extends RecyclerView.Adapter<SachAdapter.ItemHolder> {
         this.arraySach = arraySach;
     }
 
+    public void filterList(ArrayList<Sach> filteredList) {
+        arraySach = filteredList;
+        notifyDataSetChanged();
+    }
+
     @NonNull
     @Override
     public ItemHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -41,6 +46,7 @@ public class SachAdapter extends RecyclerView.Adapter<SachAdapter.ItemHolder> {
     public void onBindViewHolder(@NonNull ItemHolder holder, int position) {
         Sach sach = arraySach.get(position);
         holder.tvTenSach.setText(sach.getTenSach());
+        holder.tvTacGia.setText(sach.getTenTacGia());
         DecimalFormat decimalFormat = new DecimalFormat("###,###,###");
         holder.tvGiaSach.setText("Giá: "+decimalFormat.format(sach.getGiaSach())+" Đ");
         Picasso.get().load(sach.getHinhAnhSach())

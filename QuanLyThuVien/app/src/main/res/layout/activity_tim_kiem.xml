@@ -3,55 +3,44 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"
     android:layout_height="match_parent"
-    tools:context=".Activity.Activity.MainActivity"
+    android:orientation="vertical"
     android:weightSum="10">
-    <androidx.drawerlayout.widget.DrawerLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_weight="9.2"
-        android:id="@+id/drawerLayoutMain"
         android:layout_width="match_parent"
         android:layout_height="0dp">
-        <LinearLayout
-            android:orientation="vertical"
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/tbTimKiem"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/title"
+            app:title=" "
+            android:fontFamily="@font/cucho"
+            app:titleTextColor="#FF00FF">
+            <EditText
+                android:id="@+id/edtTimKiem"
+                android:layout_width="240dp"
+                android:layout_height="32dp"
+                android:background="@drawable/border_dangnhap"
+                android:backgroundTint="@color/white"
+                android:drawableStart="@drawable/ic_search"
+                android:padding="2dp"
+                android:fontFamily="@font/serif"
+                android:textSize="16sp"
+                android:drawableTint="@color/textcolor"
+                android:hint="Tìm kiếm"
+                android:textColor="@color/textcolor"
+
+                />
+        </androidx.appcompat.widget.Toolbar>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerTimKiem"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolBarMain"
-                android:fontFamily="@font/cucho"
-                android:background="@color/title"
-                app:titleTextColor="@color/white"
-                app:title="Thư viện"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize">
-            </androidx.appcompat.widget.Toolbar>
-            <com.google.android.material.tabs.TabLayout
-                android:fontFamily="@font/cucho"
-                app:tabTextColor="@color/white"
-                android:id="@+id/tabLayoutMain"
-                android:background="@color/title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <androidx.viewpager2.widget.ViewPager2
-                android:id="@+id/viewPagerMain"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-        </LinearLayout>
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navigationmain"
-            app:headerLayout="@layout/header_navigation"
-            android:layout_gravity="start"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fitsSystemWindows="true">
-            <ListView
-                android:layout_marginTop="130dp"
-                android:id="@+id/listviewmain"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </ListView>
-        </com.google.android.material.navigation.NavigationView>
-    </androidx.drawerlayout.widget.DrawerLayout>
+        </androidx.recyclerview.widget.RecyclerView>
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -74,12 +63,12 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/ic_home"
-                app:tint="@color/title" />
+                app:tint="@color/textcolor" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Trang chủ"
-                android:textColor="@color/title"
+                android:textColor="@color/textcolor"
                 android:textSize="10sp" />
         </LinearLayout>
         <LinearLayout
@@ -93,13 +82,13 @@
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:src="@drawable/ic_search"
-                app:tint="@color/textcolor" />
+                app:tint="@color/title" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tìm kiếm"
-                android:textColor="@color/textcolor"
+                android:textColor="@color/title"
                 android:textSize="10sp" />
         </LinearLayout>
         <LinearLayout
