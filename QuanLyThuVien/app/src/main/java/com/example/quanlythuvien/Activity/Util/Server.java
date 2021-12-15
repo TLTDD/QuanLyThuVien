@@ -9,4 +9,5 @@ public class Server {
     public static String Duongdanphieumuon = "http://" + localhost + "/thuvienute/getphieumuon.php";
     public static String Duongdandangnhap = "http://" + localhost + "/thuvienute/login/login.php";
     public static String Duongdanthemkesach = "http://" + localhost + "/thuvienute/insertkesach.php";
+    public static String Duongdanthemsach = "http://" + localhost + "/thuvienute/insertsach.php";
 }
