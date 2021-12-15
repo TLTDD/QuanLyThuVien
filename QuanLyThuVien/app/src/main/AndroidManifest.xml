@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_book"
@@ -15,6 +16,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
+        <activity
+            android:name=".Activity.Activity.ThemKeSach"
+            android:exported="false" />
         <activity
             android:name=".Activity.Activity.TaiKhoanActivity"
             android:exported="false" />
@@ -34,10 +38,10 @@
             android:name=".Activity.Activity.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.Activity.MainActivity"
+            android:name=".Activity.Activity.Splash"
             android:exported="false" />
         <activity
-            android:name=".Activity.Activity.Splash"
+            android:name=".Activity.Activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

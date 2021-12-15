@@ -3,9 +3,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:gravity="center">
+    android:gravity="center"
+    android:weightSum="10">
     <ListView
+        android:layout_weight="9.1"
         android:id="@+id/lvKeSach"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"/>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="0.9"
+        android:tint="@color/white"
+        android:layout_marginLeft="10dp"
+        android:backgroundTint="@color/title"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_cong"
+        android:id="@+id/btnThemKe"/>
 </LinearLayout>

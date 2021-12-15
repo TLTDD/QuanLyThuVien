@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -18,11 +19,13 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.quanlythuvien.Activity.Activity.SachTrongKeActivity;
+import com.example.quanlythuvien.Activity.Activity.ThemKeSach;
 import com.example.quanlythuvien.Activity.Adapter.KeSachAdapter;
 import com.example.quanlythuvien.Activity.Model.KeSach;
 import com.example.quanlythuvien.Activity.Util.CheckConnection;
 import com.example.quanlythuvien.Activity.Util.Server;
 import com.example.quanlythuvien.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -33,6 +36,7 @@ import java.util.ArrayList;
 public class KeSachFragment extends Fragment {
     private View view;
     private ListView lvKeSach;
+    private FloatingActionButton btnThem;
     private KeSachAdapter keSachAdapter;
     private ArrayList<KeSach> arrayListKeSach;
     private int id=0;
@@ -43,8 +47,19 @@ public class KeSachFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_kesach,container,false);
         AnhXa();
         GetDuLieuLoaiSP();
+        eventBtn();
         setItemListView();
         return view;
+    }
+
+    private void eventBtn() {
+        btnThem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), ThemKeSach.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void setItemListView() {
@@ -94,5 +109,6 @@ public class KeSachFragment extends Fragment {
         lvKeSach = view.findViewById(R.id.lvKeSach);
         arrayListKeSach = new ArrayList<>();
         keSachAdapter = new KeSachAdapter(arrayListKeSach,getActivity());
+        btnThem = view.findViewById(R.id.btnThemKe);
     }
 }
