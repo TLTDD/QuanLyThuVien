@@ -1,12 +1,17 @@
 package com.example.quanlythuvien.Activity.Adapter;
 
+import static android.app.Activity.RESULT_OK;
+
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.quanlythuvien.Activity.Activity.Chitietphieumuon;
 import com.example.quanlythuvien.Activity.Model.BanDoc;
 import com.example.quanlythuvien.Activity.Model.PhieuMuon;
 import com.example.quanlythuvien.R;
@@ -38,7 +43,7 @@ public class PhieuMuonAdapter extends BaseAdapter {
     }
 
     public class ViewHolder{
-        TextView tvTenSachMuon,tvNguoiMuon,tvMSVMuon,tvNgayMuon,tvNgayTra,tvTinhTrang;
+        public TextView tvTenSachMuon,tvNguoiMuon,tvMSVMuon,tvNgayMuon,tvNgayTra,tvTinhTrang;
     }
 
     @Override
@@ -59,7 +64,7 @@ public class PhieuMuonAdapter extends BaseAdapter {
         else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
-        PhieuMuon phieumuon = (PhieuMuon) getItem(position);
+        final PhieuMuon phieumuon = (PhieuMuon) getItem(position);
         viewHolder.tvTenSachMuon.setText(phieumuon.getTenSach());
         viewHolder.tvNguoiMuon.setText(phieumuon.getHoTen());
         viewHolder.tvMSVMuon.setText(phieumuon.getMaSV());

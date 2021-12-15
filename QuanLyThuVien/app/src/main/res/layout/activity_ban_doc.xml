@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Activity.BanDocActivity"
+    android:orientation="vertical">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolBarBanDoc"
+        android:fontFamily="@font/cucho"
+        android:background="@color/title"
+        app:titleTextColor="@color/white"
+        app:title="Bạn đọc"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize">
+    </androidx.appcompat.widget.Toolbar>
+    <ListView
+        android:id="@+id/lvBanDocAc"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+</LinearLayout>

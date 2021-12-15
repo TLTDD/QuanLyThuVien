@@ -17,6 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
         <activity
+            android:name=".Activity.Activity.BanDocActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Activity.Chitietphieumuon"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Activity.ThemSach"
             android:exported="false" />
         <activity

@@ -1,6 +1,8 @@
 package com.example.quanlythuvien.Activity.Model;
 
-public class BanDoc {
+import java.io.Serializable;
+
+public class BanDoc implements Serializable {
     public int id;
     public String hoTen;
     public String maSV;

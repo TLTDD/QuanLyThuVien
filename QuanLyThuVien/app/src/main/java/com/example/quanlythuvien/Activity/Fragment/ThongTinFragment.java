@@ -1,10 +1,12 @@
 package com.example.quanlythuvien.Activity.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -14,15 +16,33 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.example.quanlythuvien.Activity.Activity.Chitietphieumuon;
+import com.example.quanlythuvien.Activity.Activity.MainActivity;
 import com.example.quanlythuvien.Activity.Model.Sach;
+import com.example.quanlythuvien.Activity.Util.CheckConnection;
+import com.example.quanlythuvien.Activity.Util.Server;
 import com.example.quanlythuvien.R;
 import com.squareup.picasso.Picasso;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.text.DecimalFormat;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ThongTinFragment extends Fragment {
     View view;
     private ImageView imgSach;
+    private Button btnThemMuon;
     private TextView tvTenSach,tvTacGia,tvNXB,tvSeries,tvNSX,tvNgonNgu,tvGiaSach,tvLoiTua;
     int id=0;
     int idKeSach = 0;
@@ -42,7 +62,22 @@ public class ThongTinFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_thongtinsach,container,false);
         AnhXa();
         GetDuLieu();
+        EventButton();
         return view;
+    }
+
+    private void EventButton() {
+        btnThemMuon.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), Chitietphieumuon.class);
+                Sach sach = (Sach) getActivity().getIntent().getSerializableExtra("thongtinsach");
+                int idSach = 0;
+                idSach = sach.getId();
+                intent.putExtra("idSach",idSach);
+                startActivity(intent);
+            }
+        });
     }
 
     private void GetDuLieu() {
@@ -59,7 +94,6 @@ public class ThongTinFragment extends Fragment {
         soLuong = sach.getSoLuong();
         loiTua = sach.getLoiTua();
         hinhAnhSach = sach.getHinhAnhSach();
-
         tvTenSach.setText(tenSach);
         tvTacGia.setText(tenTacGia);
         tvNXB.setText(nhaXuatBan);
@@ -78,6 +112,7 @@ public class ThongTinFragment extends Fragment {
     }
 
     private void AnhXa() {
+        btnThemMuon = view.findViewById(R.id.btnChoMuon);
         imgSach = view.findViewById(R.id.imgSachTT);
         tvTenSach = view.findViewById(R.id.tvTenSachTT);
         tvTacGia = view.findViewById(R.id.tvTacGiaTT);
@@ -87,5 +122,6 @@ public class ThongTinFragment extends Fragment {
         tvNgonNgu = view.findViewById(R.id.tvNgonNguTT);
         tvGiaSach = view.findViewById(R.id.tvGiaSachTT);
         tvLoiTua = view.findViewById(R.id.tvLoiTuaTT);
+
     }
 }

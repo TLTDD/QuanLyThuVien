@@ -11,21 +11,25 @@ import android.widget.BaseAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.quanlythuvien.Activity.Activity.BanDocActivity;
 import com.example.quanlythuvien.Activity.Activity.Chitietphieumuon;
 import com.example.quanlythuvien.Activity.Model.BanDoc;
-import com.example.quanlythuvien.Activity.Model.KeSach;
-import com.example.quanlythuvien.Activity.Model.PhieuMuon;
 import com.example.quanlythuvien.R;
 
 import java.util.ArrayList;
 
-public class BanDocAdapter extends BaseAdapter {
+public class BanDocAcAdapter  extends BaseAdapter {
     private ArrayList<BanDoc> arrayListBanDoc;
-     Context context;
+    BanDocActivity context;
 
-    public BanDocAdapter(ArrayList<BanDoc> arrayListBanDoc, Context context) {
+    public BanDocAcAdapter(ArrayList<BanDoc> arrayListBanDoc, BanDocActivity context) {
         this.arrayListBanDoc = arrayListBanDoc;
         this.context = context;
+    }
+
+    public class ViewHolder{
+        public LinearLayout lnItemBandoc;
+        public TextView tvTenSV,tvMSV;
     }
 
     @Override
@@ -43,10 +47,6 @@ public class BanDocAdapter extends BaseAdapter {
         return position;
     }
 
-    public class ViewHolder{
-        public TextView tvTenSV,tvMSV;
-    }
-
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder viewHolder= null;
@@ -56,6 +56,7 @@ public class BanDocAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.item_bandoc,null);
             viewHolder.tvTenSV = convertView.findViewById(R.id.tvTenSV);
             viewHolder.tvMSV = convertView.findViewById(R.id.tvMSV);
+            viewHolder.lnItemBandoc = convertView.findViewById(R.id.ln_itemBanDoc);
             convertView.setTag(viewHolder);
         }
         else {
@@ -64,6 +65,16 @@ public class BanDocAdapter extends BaseAdapter {
         BanDoc bandoc = (BanDoc) getItem(position);
         viewHolder.tvTenSV.setText(bandoc.getHoTen());
         viewHolder.tvMSV.setText(bandoc.getMaSV());
+        viewHolder.lnItemBandoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, Chitietphieumuon.class);
+                BanDoc bandoc = (BanDoc) getItem(position);
+                intent.putExtra("BanDoc", bandoc);
+                context.setResult(RESULT_OK,intent);
+                context.finish();
+            }
+        });
         return convertView;
     }
 }
