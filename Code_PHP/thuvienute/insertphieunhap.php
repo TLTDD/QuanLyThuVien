@@ -1,23 +1,17 @@
 <?php
-    include "connect.php";
-    $json = $_POST['json'];
-    $data = json_decode($json,true);
-    foreach ($data as $value ){
-        $maPM = $value['maPM'];
-        $maSach = $value['maSach'];
-        $tensanpham = $value['tenSanPham'];
-        $ngayMuon = $value['ngayMuon'];
-        $soluongsanpham = $value['ngayHetHan'];
-        $trangThai = "Đang mượn";
-        $tr
-        $query = "INSERT INTO chitietmuon(id,maPM,maSach,tenSanPham,ngayMuon,ngayHetHan,trangThai)"
-                . "VALUE(null,'$maPM','$maSach','$tensanpham','$ngayMuon','$ngayHetHan',$trangThai)";
-        $Dta = mysqli_query($conn, $query);
+    include_once("connect.php");
+    $id = $_POST['id'];
+    $maPM = $_POST['maPM'];
+    $tenSach = $_POST['tenSach'];
+    $maSach = $_POST['maSach'];
+    $ngayMuon = $_POST['ngayMuon'];
+    $ngayHetHan = $_POST['ngayHetHan'];
+    $trangThai = $_POST['trangThai'];
+    $querry = "INSERT into chitietmuon values('$id','$maPM','$tenSach','$maSach','$ngayMuon','$ngayHetHan','$trangThai')";           
+    $result =mysqli_query($conn, $querry);  
+    if($result)
+    {
+        echo "success";
     }
-    if($Dta){
-        echo "1";
-    }
-    else {
-        echo "0";
-    }
+    else echo "error";
 ?>

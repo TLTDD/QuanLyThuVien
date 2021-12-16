@@ -73,8 +73,13 @@ public class ThongTinFragment extends Fragment {
                 Intent intent = new Intent(getActivity(), Chitietphieumuon.class);
                 Sach sach = (Sach) getActivity().getIntent().getSerializableExtra("thongtinsach");
                 int idSach = 0;
+                String tenSach = "";
+                Bundle bundle = new Bundle();
                 idSach = sach.getId();
-                intent.putExtra("idSach",idSach);
+                tenSach = sach.getTenSach();
+                bundle.putInt("idSach",idSach);
+                bundle.putString("tenSach",tenSach);
+                intent.putExtra("dulieusach",bundle);
                 startActivity(intent);
             }
         });
