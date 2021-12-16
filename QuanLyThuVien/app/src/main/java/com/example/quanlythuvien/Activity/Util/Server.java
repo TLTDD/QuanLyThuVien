@@ -11,5 +11,6 @@ public class Server {
     public static String Duongdanthemkesach = "http://" + localhost + "/thuvienute/insertkesach.php";
     public static String Duongdanthemsach = "http://" + localhost + "/thuvienute/insertsach.php";
     public static String Duongdanthemphieu = "http://" + localhost + "/thuvienute/insertphieunhap.php";
+    public static String Duongdanthembandoc = "http://" + localhost + "/thuvienute/insertbandoc.php";
 
 }

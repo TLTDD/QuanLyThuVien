@@ -1,5 +1,6 @@
 package com.example.quanlythuvien.Activity.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.quanlythuvien.Activity.Activity.Thembandoc;
 import com.example.quanlythuvien.Activity.Adapter.BanDocAdapter;
 import com.example.quanlythuvien.Activity.Adapter.KeSachAdapter;
 import com.example.quanlythuvien.Activity.Model.BanDoc;
@@ -22,6 +24,7 @@ import com.example.quanlythuvien.Activity.Model.KeSach;
 import com.example.quanlythuvien.Activity.Util.CheckConnection;
 import com.example.quanlythuvien.Activity.Util.Server;
 import com.example.quanlythuvien.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -34,6 +37,7 @@ public class BanDocFragment extends Fragment {
     private ListView lvBanDoc;
     private BanDocAdapter banDocAdapter;
     private ArrayList<BanDoc> arrayListBanDoc;
+    FloatingActionButton btnThem;
     private int id=0;
     private String HoTen="";
     private String MSV="";
@@ -49,7 +53,18 @@ public class BanDocFragment extends Fragment {
         view = inflater.inflate(R.layout.fragment_bandoc,container,false);
         AnhXa();
         GetDuLieuLoaiSP();
+        EventButton();
         return view;
+    }
+
+    private void EventButton() {
+        btnThem.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Thembandoc.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void GetDuLieuLoaiSP() {
@@ -95,5 +110,6 @@ public class BanDocFragment extends Fragment {
         lvBanDoc = view.findViewById(R.id.lvBanDoc);
         arrayListBanDoc = new ArrayList<>();
         banDocAdapter = new BanDocAdapter(arrayListBanDoc,getActivity());
+        btnThem = view.findViewById(R.id.btnThemBD);
     }
 }
