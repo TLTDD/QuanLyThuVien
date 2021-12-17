@@ -55,34 +55,58 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_gravity="left"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            <EditText
-                android:fontFamily="@font/serif"
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Ngày mượn"
                 android:textSize="16sp"
-                android:id="@+id/edtNgayMuon"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:hint="Nhập ngày mượn"
-                android:inputType="textEmailAddress" />
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"/>
+            <ImageButton
+                android:id="@+id/ivNgayMuon"
+                android:src="@drawable/calender"
+                android:layout_width="40dp"
+                android:background="#fafafa"
+                android:onClick="btnSetDateNm_click"
+                android:layout_height="40dp"/>
+            <TextView
+                android:id="@+id/txtNgayMuon"
+                android:layout_width="wrap_content"
+                android:textSize="18dp"
+                android:textColor="#FF0303"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_gravity="left"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content">
-            <EditText
-                android:fontFamily="@font/serif"
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="Ngày ngày trả"
                 android:textSize="16sp"
-                android:id="@+id/edtNgayTra"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:hint="Nhập ngày trả"
-                android:inputType="textEmailAddress" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"/>
+            <ImageButton
+                android:id="@+id/ivNgayTra"
+                android:src="@drawable/calender"
+                android:background="#fafafa"
+                android:onClick="btnSetDateNt_click"
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+            <TextView
+                android:id="@+id/txtNgayTra"
+                android:layout_width="wrap_content"
+                android:textSize="18dp"
+                android:textColor="#FF0303"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
         <Button
             android:layout_gravity="left"
             android:fontFamily="@font/serif"

@@ -3,11 +3,15 @@ package com.example.quanlythuvien.Activity.Activity;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -22,12 +26,15 @@ import com.example.quanlythuvien.Activity.Model.BanDoc;
 import com.example.quanlythuvien.Activity.Util.Server;
 import com.example.quanlythuvien.R;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Chitietphieumuon extends AppCompatActivity {
     EditText edtTenBanDoc,edtNgayMuon,edtNgayTra,edtMSSV;
     Button btnxacnhan,btntrove,btnChonSV;
+    ImageButton ivNgayMuon,ivNgayTra;
+    TextView txtNgayMuon, txtNgayTra;
     int REQUEST_BANDOC;
     int maPM = 0;
     int maSach = 0;
@@ -77,8 +84,8 @@ public class Chitietphieumuon extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if(edtTenBanDoc.getText().toString().trim().isEmpty()
-                        ||edtNgayMuon.getText().toString().trim().isEmpty()
-                        ||edtNgayTra.getText().toString().trim().isEmpty()
+                        ||txtNgayMuon.getText().toString().trim().isEmpty()
+                        ||txtNgayTra.getText().toString().trim().isEmpty()
                         ||edtMSSV.getText().toString().trim().isEmpty()
                         ){
                     Toast.makeText(getApplicationContext(), "Bạn phải điền đầy đủ thông tin !", Toast.LENGTH_SHORT).show();
@@ -89,6 +96,38 @@ public class Chitietphieumuon extends AppCompatActivity {
                 }
             }
         });
+    }
+    public void btnSetDateNm_click(View view) {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener(){
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                String dateString = dayOfMonth + "/" + month + "/" + year;
+                txtNgayMuon.setText(dateString);
+            }
+        },year,month, day);
+        datePickerDialog.show();
+    }
+    public void btnSetDateNt_click(View view) {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener(){
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                String dateString = dayOfMonth + "/" + month + "/" + year;
+                txtNgayTra.setText(dateString);
+            }
+        },year,month, day);
+        datePickerDialog.show();
     }
     private void AddPhieuMuon(){
         RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -116,8 +155,8 @@ public class Chitietphieumuon extends AppCompatActivity {
                 param.put("maPM",maPM+"");
                 param.put("tenSach",tenSach+"");
                 param.put("maSach",maSach+"");
-                param.put("ngayMuon",edtNgayMuon.getText().toString().trim());
-                param.put("ngayHetHan",edtNgayTra.getText().toString().trim());
+                param.put("ngayMuon",txtNgayMuon.getText().toString());
+                param.put("ngayHetHan",txtNgayTra.getText().toString());
                 param.put("trangThai","Đang mượn");
                 return param;
             }
@@ -128,8 +167,10 @@ public class Chitietphieumuon extends AppCompatActivity {
     private void AnhXa() {
         edtTenBanDoc = findViewById(R.id.edtTenBanDoc);
         edtMSSV = findViewById(R.id.edtMSSV);
-        edtNgayMuon = findViewById(R.id.edtNgayMuon);
-        edtNgayTra = findViewById(R.id.edtNgayTra);
+        ivNgayMuon = findViewById(R.id.ivNgayMuon);
+        ivNgayTra = findViewById(R.id.ivNgayTra);
+        txtNgayMuon = findViewById(R.id.txtNgayMuon);
+        txtNgayTra = findViewById(R.id.txtNgayTra);
         btnxacnhan = findViewById(R.id.btnXacNhan);
         btntrove = findViewById(R.id.btnHuy);
         btnChonSV = findViewById(R.id.btnChonBanDoc);
