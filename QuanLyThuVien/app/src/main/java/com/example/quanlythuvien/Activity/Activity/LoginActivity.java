@@ -25,8 +25,9 @@ import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity {
     private Button btndangnhap;
-    private EditText etEmail,etPassword;
-    private String email, password;
+    private EditText etTaiKhoan,etPassword;
+    private String taikhoan, password;
+    public static String taiKhoanDN ="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,19 +36,17 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void login(View view){
-        email = etEmail.getText().toString().trim();
+        taikhoan = etTaiKhoan.getText().toString().trim();
         password = etPassword.getText().toString().trim();
-        if(!email.equals("")&&!password.equals("")){
+        if(!taikhoan.equals("")&&!password.equals("")){
             StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.Duongdandangnhap, new Response.Listener<String>() {
-
                 @Override
                 public void onResponse(String response) {
                     Log.e("QB", "onResponse: " + response);
                     if(response.contains("success")){
                         Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                        String tkemail = etEmail.getText().toString().trim();
-                        Log.d("email"," "+tkemail);
-                        intent.putExtra("email",tkemail);
+                        taiKhoanDN = etTaiKhoan.getText().toString().trim();
+                        intent.putExtra("taiKhoan",taiKhoanDN);
                         startActivity(intent);
                         finish();
                         Log.e("QB", "onResponse: " + response);
@@ -68,7 +67,7 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 protected Map<String, String> getParams() throws AuthFailureError {
                     Map<String, String> data = new HashMap<>();
-                    data.put("email",email);
+                    data.put("taiKhoan",taikhoan);
                     data.put("password",password);
                     return data;
                 }
@@ -82,7 +81,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private void AnhXa() {
         btndangnhap = findViewById(R.id.btndangnhap);
-        etEmail = findViewById(R.id.edtTaiKhoan);
+        etTaiKhoan = findViewById(R.id.edtTaiKhoan);
         etPassword = findViewById(R.id.edtMatKhau);
     }
 }

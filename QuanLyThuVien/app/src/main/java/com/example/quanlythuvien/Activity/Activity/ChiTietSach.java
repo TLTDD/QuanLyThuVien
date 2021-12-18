@@ -49,9 +49,6 @@ public class ChiTietSach extends AppCompatActivity {
                     case 0:
                         tab.setText("Chi tiết");
                         break;
-                    case 1:
-                        tab.setText("Ghi chú");
-                        break;
                 }
             }
         }).attach();

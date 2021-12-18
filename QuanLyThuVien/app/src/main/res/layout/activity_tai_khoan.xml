@@ -7,56 +7,136 @@
     android:orientation="vertical"
     android:weightSum="10">
     <LinearLayout
-        android:orientation="vertical"
         android:layout_weight="9.2"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp">
         <androidx.appcompat.widget.Toolbar
+            android:gravity="center_horizontal"
             android:id="@+id/tbTaiKhoan"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/title"
             app:title="Tài khoản"
             android:fontFamily="@font/cucho"
-            app:titleTextColor="@color/white">
+            app:titleTextColor="@color/white"
+            android:background="@color/title"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize">
         </androidx.appcompat.widget.Toolbar>
         <LinearLayout
+            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:background="#EFEFEF"
-            android:gravity="center"
-            android:orientation="horizontal">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:backgroundTint="@color/teal_200"
-                android:src="@drawable/google"
-                android:id="@+id/avataUser"
-                tools:ignore="SpeakableTextPresentCheck" />
-
+            android:layout_height="match_parent">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:orientation="vertical">
-                <TextView
-                    android:textColor="#f20"
-                    android:fontFamily="@font/serif"
-                    android:id="@+id/textviewtenkh"
+                android:layout_height="90dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nguyễn Văn An"
-                    android:textSize="20sp" />
-                <TextView
-                    android:fontFamily="@font/serif"
-                    android:id="@+id/textviewemailkh"
-                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:scaleType="fitXY"
+                    android:tint="@color/white"
+                    android:backgroundTint="@color/title"
+                    android:src="@drawable/ic_person"
+                    android:id="@+id/avataUser"
+                    tools:ignore="SpeakableTextPresentCheck" />
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="nvan@gmail.com"
-                    android:textSize="15sp" />
+                    android:layout_marginLeft="10dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:textColor="#f20"
+                        android:fontFamily="@font/serif"
+                        android:id="@+id/tvTenThuThu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Họ tên"
+                        android:textSize="20sp" />
+                    <TextView
+                        android:fontFamily="@font/serif"
+                        android:id="@+id/tvTaiKhoan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="taikhoan"
+                        android:textSize="15sp" />
+                </LinearLayout>
             </LinearLayout>
+            <Button
+                android:drawableTint="@color/black"
+                android:backgroundTint="#FFFAF1"
+                android:fontFamily="@font/serif"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/btnthongtintk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@color/titlelight"
+                android:drawableStart="@drawable/ic_person"
+                android:drawablePadding="20dp"
+                android:gravity="left|center"
+                android:paddingLeft="20dp"
+                android:text="Thông tin tài khoản"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:textColor="@color/black" />
+            <Button
+                android:drawableTint="@color/black"
+                android:backgroundTint="#FFFAF1"
+                android:fontFamily="@font/serif"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:id="@+id/btndoimatkhau"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/titlelight"
+                android:drawableStart="@drawable/ic_lockreset"
+                android:drawablePadding="20dp"
+                android:gravity="left|center"
+                android:paddingLeft="20dp"
+                android:text="Đổi mật khẩu"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:textColor="@color/black"/>
+            <Button
+                android:drawableTint="@color/black"
+                android:backgroundTint="#FFFAF1"
+                android:fontFamily="@font/serif"
+                android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="@color/titlelight"
+                android:drawableStart="@drawable/ic_support"
+                android:drawablePadding="20dp"
+                android:gravity="left|center"
+                android:paddingLeft="20dp"
+                android:text="Hỗ trợ"
+                android:textAllCaps="false"
+                android:textSize="18dp"
+                android:textColor="@color/black" />
+            <Button
+                android:id="@+id/btnDangXuat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/border_dangnhap"
+                android:backgroundTint="@color/title"
+                android:fontFamily="@font/cucho"
+                android:text="Đăng xuất"
+                android:textSize="18dp"
+                android:textColor="@color/black" />
+            <TextView
+                android:fontFamily="@font/serif"
+                android:layout_gravity="center"
+                android:text="Phiên bản 1.20 (20)"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
         </LinearLayout>
     </LinearLayout>
     <LinearLayout

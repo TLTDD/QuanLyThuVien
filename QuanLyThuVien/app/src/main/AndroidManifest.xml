@@ -17,6 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
         <activity
+            android:name=".Activity.Activity.DoiMatKhau"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Activity.ThongTinTaiKhoan"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Activity.Thembandoc"
             android:exported="false" />
         <activity
@@ -50,10 +56,10 @@
             android:name=".Activity.Activity.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.Activity.Splash"
+            android:name=".Activity.Activity.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.Activity.MainActivity"
+            android:name=".Activity.Activity.Splash"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -2,6 +2,7 @@ package com.example.quanlythuvien.Activity.Activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 
@@ -31,7 +32,12 @@ public class MainActivity extends AppCompatActivity {
         AnhXa();
         TLayout();
         ActionBar();
+        GetTaiKhoan();
         OnClickMenu();
+    }
+
+    private void GetTaiKhoan() {
+        Log.d("tk",LoginActivity.taiKhoanDN.trim());
     }
 
     private void OnClickMenu() {

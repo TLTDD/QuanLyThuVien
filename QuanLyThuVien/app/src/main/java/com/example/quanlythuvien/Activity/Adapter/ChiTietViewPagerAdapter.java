@@ -24,8 +24,6 @@ public class ChiTietViewPagerAdapter extends FragmentStateAdapter {
         switch (position){
             case 0:
                 return new ThongTinFragment();
-            case 1:
-                return new GhiChuFragment();
             default:
                 return new ThongTinFragment();
         }
@@ -33,6 +31,6 @@ public class ChiTietViewPagerAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 1;
     }
 }

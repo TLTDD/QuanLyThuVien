@@ -10,4 +10,5 @@
     <color name="title">#F1A6FF</color>
     <color name="menu">#F6F6F6</color>
     <color name="textcolor">#666</color>
+    <color name="titlelight">#FFFAF1</color>
 </resources>
