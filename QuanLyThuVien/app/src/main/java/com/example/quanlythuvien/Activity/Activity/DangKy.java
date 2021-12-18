@@ -3,11 +3,13 @@ package com.example.quanlythuvien.Activity.Activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -26,6 +28,7 @@ import java.util.Map;
 public class DangKy extends AppCompatActivity {
     private Button btnBack, btnDangKy;
     private EditText etTaiKhoan, etName,etPassword,edtEmail,etAgainPass;
+    private TextView txtStatus;
     private String name, taikhoan,password,reneterPassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +50,7 @@ public class DangKy extends AppCompatActivity {
         btnDangKy = findViewById(R.id.btndangky);
         etTaiKhoan = findViewById(R.id.edtTaiKhoan);
         etName = findViewById(R.id.edtTenSv);
-        //edtEmail = findViewById(R.id.edtEmail);
+        txtStatus = findViewById(R.id.statusRegister);
         etPassword = findViewById(R.id.edtMatKhau);
         etAgainPass = findViewById(R.id.edtNhapLaiPass);
     }
@@ -68,12 +71,12 @@ public class DangKy extends AppCompatActivity {
                         etName.setText("");
                         etPassword.setText("");
                         etAgainPass.setText("");
-                        //tvStatus.setText("Tạo tài khoản thành công!");
+                        txtStatus.setText("Tạo tài khoản thành công!");
                         btnDangKy.setClickable(false);
                     } else if (response.contains("failure")) {
-                        //tvStatus.setText("Email đã tồn tại");
-                        //tvStatus.setTextColor(Color.parseColor("#950000"));
-                        //etEmail.setTextColor(Color.parseColor("#950000"));
+                        txtStatus.setText("Tài khoản đã tồn tại");
+                        txtStatus.setTextColor(Color.parseColor("#950000"));
+                        txtStatus.setTextColor(Color.parseColor("#950000"));
                         //etEmail.requestFocus();
                         //etEmail.requestFocus();
                     }
