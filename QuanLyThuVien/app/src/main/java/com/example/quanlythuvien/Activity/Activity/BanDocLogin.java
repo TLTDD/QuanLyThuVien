@@ -24,7 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BanDocLogin extends AppCompatActivity {
-    private Button btndangnhap;
+    private Button btndangnhap, btnDangKy;
     private EditText etTaiKhoan,etPassword;
     private String taikhoan, password;
     public static String taiKhoanDN ="";
@@ -33,6 +33,14 @@ public class BanDocLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ban_doc_login);
         AnhXa();
+
+        btnDangKy.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), DangKy.class );
+                startActivity(intent);
+            }
+        });
     }
 
     public void login(View view){
@@ -80,6 +88,7 @@ public class BanDocLogin extends AppCompatActivity {
 
     private void AnhXa() {
         btndangnhap = findViewById(R.id.btndangnhap);
+        btnDangKy = findViewById(R.id.btndangky);
         etTaiKhoan = findViewById(R.id.edtTaiKhoan);
         etPassword = findViewById(R.id.edtMatKhau);
     }
