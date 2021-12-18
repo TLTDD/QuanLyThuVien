@@ -1,5 +1,7 @@
 package com.example.quanlythuvien.Activity.Activity;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -7,8 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-
-import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -23,34 +23,27 @@ import com.example.quanlythuvien.R;
 import java.util.HashMap;
 import java.util.Map;
 
-public class LoginActivity extends AppCompatActivity {
-    private Button btndangnhap,btndnbd;
+public class BanDocLogin extends AppCompatActivity {
+    private Button btndangnhap;
     private EditText etTaiKhoan,etPassword;
     private String taikhoan, password;
     public static String taiKhoanDN ="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_ban_doc_login);
         AnhXa();
-        btndnbd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),BanDocLogin.class);
-                startActivity(intent);
-            }
-        });
     }
 
     public void login(View view){
         taikhoan = etTaiKhoan.getText().toString().trim();
         password = etPassword.getText().toString().trim();
         if(!taikhoan.equals("")&&!password.equals("")){
-            StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.Duongdandangnhap, new Response.Listener<String>() {
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.Duongdandangnhapbd, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
                     if(response.contains("success")){
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        Intent intent = new Intent(BanDocLogin.this, MainBanDoc.class);
                         taiKhoanDN = etTaiKhoan.getText().toString().trim();
                         intent.putExtra("taiKhoan",taiKhoanDN);
                         startActivity(intent);
@@ -58,10 +51,10 @@ public class LoginActivity extends AppCompatActivity {
                         Log.e("QB", "onResponse: " + response);
                     }else if(response.contains("failure")) {
 
-                        Toast.makeText(LoginActivity.this, "Nhập sai tài khoản hoặc mật khẩu", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BanDocLogin.this, "Nhập sai tài khoản hoặc mật khẩu", Toast.LENGTH_SHORT).show();
                     }
                     else {
-                        Toast.makeText(LoginActivity.this, "onResponse: " + response, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(BanDocLogin.this, "onResponse: " + response, Toast.LENGTH_SHORT).show();
                     }
                 }
             }, new Response.ErrorListener() {
@@ -81,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
             RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
             requestQueue.add(stringRequest);
         } else {
-            Toast.makeText(LoginActivity.this, "Field can not be empty!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(BanDocLogin.this, "Field can not be empty!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -89,6 +82,5 @@ public class LoginActivity extends AppCompatActivity {
         btndangnhap = findViewById(R.id.btndangnhap);
         etTaiKhoan = findViewById(R.id.edtTaiKhoan);
         etPassword = findViewById(R.id.edtMatKhau);
-        btndnbd = findViewById(R.id.btndangnhapbd);
     }
 }

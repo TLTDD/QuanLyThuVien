@@ -15,4 +15,6 @@ public class Server {
     public static String Duongdanthuthu = "http://" + localhost + "/thuvienute/getinfor.php?taiKhoan=";
     public static String Duongdancapnhattk ="http://"+localhost+"/thuvienute/insertinfor.php";
     public static String DuongdanresetPass="http://"+localhost+"/thuvienute/login/resetPass.php";
+    public static String Duongdandangnhapbd = "http://" + localhost + "/thuvienute/login/login1.php";
+    public static String Duongdansachmoi = "http://" + localhost + "/thuvienute/getsachmoi.php";
 }

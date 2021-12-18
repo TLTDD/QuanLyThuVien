@@ -17,6 +17,24 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">
         <activity
+            android:name=".Activity.Activity.DoiMatKhauBD"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Activity.TTTKBanDoc"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Activity.TaiKhoanBD"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Activity.TimKiemSachBD"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Activity.MainBanDoc"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Activity.BanDocLogin"
+            android:exported="false" />
+        <activity
             android:name=".Activity.Activity.DoiMatKhau"
             android:exported="false" />
         <activity

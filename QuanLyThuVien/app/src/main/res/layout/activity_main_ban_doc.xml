@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Activity.Activity.MainBanDoc"
+    android:orientation="vertical"
+    android:weightSum="10">
+    <LinearLayout
+        android:layout_weight="9.2"
+        android:weightSum="9"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:layout_weight="9"
+            android:id="@+id/drawerlayoutBD"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fillViewport="true">
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@+id/tbMainBanDoc"
+                        android:fontFamily="@font/cucho"
+                        app:titleTextColor="@color/white"
+                        app:title="Trang chủ"
+                        android:background="@color/title"
+                        android:layout_width="match_parent"
+                        android:layout_height="?attr/actionBarSize"/>
+                    <ViewFlipper
+                        android:id="@+id/viewflipperBD"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"/>
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+                    </RelativeLayout>
+                    <androidx.appcompat.widget.Toolbar
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="0dp"
+                        app:cardElevation="10dp"
+                        app:cardCornerRadius="30dp"
+                        >
+                        <LinearLayout
+                            android:outlineAmbientShadowColor="@color/black"
+                            android:outlineSpotShadowColor="@color/black"
+                            android:gravity="center"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            >
+                            <TextView
+                                android:fontFamily="@font/serif"
+                                android:padding="5dp"
+                                android:textSize="13sp"
+                                android:textStyle="bold"
+                                android:textColor="#C259D5"
+                                android:text="CHÍNH SÁCH BẠN ĐỌC TẠI THƯ VIỆN"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="2dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+                                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:backgroundTint="@color/white"
+                                        android:src="@drawable/ic_keep" />
+                                    <TextView
+                                        android:fontFamily="@font/serif"
+                                        android:layout_width="85dp"
+                                        android:layout_height="35dp"
+                                        android:gravity="center"
+                                        android:textColor="@color/textcolor"
+                                        android:text="Giữ gìn"
+                                        android:textSize="13sp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="2dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+
+                                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:backgroundTint="@color/white"
+                                        android:src="@drawable/ic_hourglass" />
+
+                                    <TextView
+                                        android:textColor="@color/textcolor"
+                                        android:fontFamily="@font/serif"
+                                        android:layout_width="85dp"
+                                        android:layout_height="35dp"
+                                        android:gravity="center"
+                                        android:text="Trả đúng hạn"
+                                        android:textSize="13sp" />
+                                </LinearLayout>
+                                <LinearLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="2dp"
+                                    android:gravity="center"
+                                    android:orientation="vertical">
+                                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:backgroundTint="@color/white"
+                                        android:src="@drawable/ic_credit" />
+                                    <TextView
+                                        android:textColor="@color/textcolor"
+                                        android:fontFamily="@font/serif"
+                                        android:layout_width="85dp"
+                                        android:layout_height="35dp"
+                                        android:gravity="center"
+                                        android:text="Trả mới mượn"
+                                        android:textSize="13sp" />
+                                </LinearLayout>
+                            </LinearLayout>
+                        </LinearLayout>
+                    </androidx.appcompat.widget.Toolbar>
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:orientation="vertical"
+                            android:layout_marginTop="10dp"
+                            android:paddingBottom="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+                            <TextView
+                                android:fontFamily="@font/serif"
+                                android:padding="5dp"
+                                android:textColor="#f20"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                android:text="Sách mới"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"/>
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/recyclerViewSachMoi"
+                                android:layout_width="match_parent"
+                                android:layout_height="700dp">
+                            </androidx.recyclerview.widget.RecyclerView>
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/navigationmainbd"
+                app:headerLayout="@layout/header_navigation"
+                android:layout_gravity="start"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true">
+                <ListView
+                    android:layout_marginTop="200dp"
+                    android:id="@+id/listviewmanhinhchinh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                </ListView>
+            </com.google.android.material.navigation.NavigationView>
+        </androidx.drawerlayout.widget.DrawerLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8"
+        android:gravity="center_vertical"
+        android:background="@color/menu"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp"
+        android:layout_gravity="end">
+        <LinearLayout
+            android:id="@+id/ln_home_bd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center|top"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_home"
+                app:tint="@color/title" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trang chủ"
+                android:textColor="@color/title"
+                android:textSize="10sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ln_search_bd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center|top"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_search"
+                app:tint="@color/textcolor" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tìm kiếm"
+                android:textColor="@color/textcolor"
+                android:textSize="10sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/ln_tk_bd"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center|top"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_person"
+                app:tint="@color/textcolor" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tài khoản"
+                android:textColor="@color/textcolor"
+                android:textSize="10sp" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

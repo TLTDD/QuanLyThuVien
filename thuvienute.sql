@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 18, 2021 lúc 04:15 AM
+-- Thời gian đã tạo: Th12 18, 2021 lúc 09:35 AM
 -- Phiên bản máy phục vụ: 10.4.22-MariaDB
 -- Phiên bản PHP: 8.0.13
 
@@ -155,15 +155,17 @@ CREATE TABLE `taikhoan` (
   `password` varchar(50) NOT NULL,
   `soDienThoai` varchar(50) NOT NULL,
   `diaChi` varchar(255) NOT NULL,
-  `ngaySinh` varchar(100) NOT NULL
+  `ngaySinh` varchar(100) NOT NULL,
+  `maQuyen` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Đang đổ dữ liệu cho bảng `taikhoan`
 --
 
-INSERT INTO `taikhoan` (`id`, `name`, `taiKhoan`, `password`, `soDienThoai`, `diaChi`, `ngaySinh`) VALUES
-(1, 'Nguyễn Quang Huy', 'nqhuy', 'nqhuy', '961640908', 'Kon Tum', '12/12/1999');
+INSERT INTO `taikhoan` (`id`, `name`, `taiKhoan`, `password`, `soDienThoai`, `diaChi`, `ngaySinh`, `maQuyen`) VALUES
+(1, 'Nguyễn Quang Huy', 'nqhuy', 'nqhuy', '961640908', 'Kon Tum', '12/12/1999', 1),
+(3, 'Bùi Văn Sỷ', 'bvsy', '1', '0254125145', 'Quảng trị', '12/1/2001', 2);
 
 --
 -- Chỉ mục cho các bảng đã đổ
@@ -231,7 +233,7 @@ ALTER TABLE `sach`
 -- AUTO_INCREMENT cho bảng `taikhoan`
 --
 ALTER TABLE `taikhoan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
