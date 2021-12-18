@@ -17,4 +17,5 @@ public class Server {
     public static String DuongdanresetPass="http://"+localhost+"/thuvienute/login/resetPass.php";
     public static String Duongdandangnhapbd = "http://" + localhost + "/thuvienute/login/login1.php";
     public static String Duongdansachmoi = "http://" + localhost + "/thuvienute/getsachmoi.php";
+    public static String Đuongdandangky = "http://" + localhost + "/thuvienute/login/register.php";
 }

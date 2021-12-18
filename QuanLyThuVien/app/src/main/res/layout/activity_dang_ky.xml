@@ -42,6 +42,7 @@
                 android:hint="Mã sinh viên"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
+        </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout
             android:layout_marginTop="10dp"
             android:layout_width="match_parent"
@@ -53,20 +54,6 @@
                 android:id="@+id/edtTenSv"
                 android:inputType="text"
                 android:hint="Tên sinh viên"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <EditText
-                android:fontFamily="@font/serif"
-                android:textSize="18sp"
-                android:layout_margin="5dp"
-                android:id="@+id/edtEmail"
-                android:inputType="text"
-                android:hint="Nhập email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -98,6 +85,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
+        <TextView
+            android:id="@+id/statusRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
         <LinearLayout
             android:layout_marginBottom="10dp"
             android:orientation="horizontal"
@@ -125,6 +116,7 @@
                 android:textSize="18sp"
                 android:background="@drawable/border_dangnhap"
                 android:text="Đăng ký"
+                android:onClick="save"
                 android:padding="15dp"
                 android:layout_marginTop="10dp"
                 android:layout_width="130dp"
