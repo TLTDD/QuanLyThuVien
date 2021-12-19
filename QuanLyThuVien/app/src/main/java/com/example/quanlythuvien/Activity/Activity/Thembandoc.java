@@ -3,7 +3,9 @@ package com.example.quanlythuvien.Activity.Activity;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -18,6 +20,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.quanlythuvien.Activity.Fragment.BanDocFragment;
 import com.example.quanlythuvien.Activity.Util.Server;
 import com.example.quanlythuvien.R;
 
@@ -68,6 +71,8 @@ public class Thembandoc extends AppCompatActivity {
             public void onResponse(String response) {
                 if(response.contains("success")){
                     Toast.makeText(getApplicationContext(), "Đã thêm bạn đọc mới !", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Xảy ra lỗi chèn!", Toast.LENGTH_SHORT).show();
