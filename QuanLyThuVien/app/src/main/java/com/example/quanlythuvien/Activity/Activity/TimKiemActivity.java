@@ -148,13 +148,6 @@ public class TimKiemActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        lnISBN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MaISBNActivity.class);
-                startActivity(intent);
-            }
-        });
         lnTaiKhoan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -166,7 +159,6 @@ public class TimKiemActivity extends AppCompatActivity {
 
     private void AnhXa() {
         lnHome = findViewById(R.id.ln_home);
-        lnISBN = findViewById(R.id.ln_isbn);
         lnTaiKhoan = findViewById(R.id.ln_tk);
         tbTimKiem = findViewById(R.id.tbTimKiem);
         recyclerViewSach = findViewById(R.id.recyclerTimKiem);

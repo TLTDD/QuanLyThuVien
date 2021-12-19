@@ -120,19 +120,11 @@ public class TaiKhoanActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        lnISBN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MaISBNActivity.class);
-                startActivity(intent);
-            }
-        });
     }
 
     private void AnhXa() {
         lnHome = findViewById(R.id.ln_home);
         lnSearch = findViewById(R.id.ln_search);
-        lnISBN = findViewById(R.id.ln_isbn);
         tbTaiKhoan = findViewById(R.id.tbTaiKhoan);
         txtTen = findViewById(R.id.tvTenThuThu);
         txtTaiKhoan = findViewById(R.id.tvTaiKhoan);

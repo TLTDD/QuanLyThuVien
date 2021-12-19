@@ -62,9 +62,6 @@
             android:name=".Activity.Activity.TaiKhoanActivity"
             android:exported="false" />
         <activity
-            android:name=".Activity.Activity.MaISBNActivity"
-            android:exported="false" />
-        <activity
             android:name=".Activity.Activity.TimKiemActivity"
             android:exported="false" />
         <activity

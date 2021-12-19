@@ -71,11 +71,12 @@ public class ThemKeSach extends AppCompatActivity {
             public void onResponse(String response) {
                 if(response.contains("success")){
                     Toast.makeText(getApplicationContext(), "Đã thêm kệ sách mới !", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Xảy ra lỗi chèn!", Toast.LENGTH_SHORT).show();
                 }
-
             }
         }, new Response.ErrorListener() {
             @Override

@@ -11,10 +11,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.quanlythuvien.Activity.Activity.Thembandoc;
 import com.example.quanlythuvien.Activity.Adapter.BanDocAdapter;
@@ -31,6 +34,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class BanDocFragment extends Fragment {
     private View view;
@@ -52,9 +57,38 @@ public class BanDocFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_bandoc,container,false);
         AnhXa();
-        GetDuLieuLoaiSP();
+        GetDuLieuBanDoc();
         EventButton();
         return view;
+    }
+
+    public void DeleteBanDoc(int id){
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.Duongdanxoabandoc, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if(response.trim().equals("success")){
+                    CheckConnection.ShowToast_Short(getActivity(),"Xóa thành công");
+                    GetDuLieuBanDoc();
+                }else {
+                    CheckConnection.ShowToast_Short(getActivity(),"Xóa không thành công");
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                CheckConnection.ShowToast_Short(getActivity(),"Xóa không thành công");
+            }
+        }){
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> params = new HashMap<>();
+                params.put("id",String.valueOf(id));
+                return params;
+            }
+        };
+        requestQueue.add(stringRequest);
     }
 
     private void EventButton() {
@@ -67,14 +101,14 @@ public class BanDocFragment extends Fragment {
         });
     }
 
-    private void GetDuLieuLoaiSP() {
+    private void GetDuLieuBanDoc() {
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Server.Duongdanbandoc, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
 
                 if (response != null){
-
+                    arrayListBanDoc.clear();
                     for (int i = 0;i < response.length();i++){
                         try {
                             JSONObject jsonObject = response.getJSONObject(i);
@@ -109,7 +143,7 @@ public class BanDocFragment extends Fragment {
     private void AnhXa() {
         lvBanDoc = view.findViewById(R.id.lvBanDoc);
         arrayListBanDoc = new ArrayList<>();
-        banDocAdapter = new BanDocAdapter(arrayListBanDoc,getActivity());
+        banDocAdapter = new BanDocAdapter(arrayListBanDoc,BanDocFragment.this);
         btnThem = view.findViewById(R.id.btnThemBD);
     }
 }

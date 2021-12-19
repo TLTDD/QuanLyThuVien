@@ -23,6 +23,7 @@ import com.example.quanlythuvien.Activity.Util.CheckConnection;
 import com.example.quanlythuvien.Activity.Util.Server;
 import com.example.quanlythuvien.R;
 
+import androidx.appcompat.widget.Toolbar;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -33,14 +34,28 @@ public class SachTrongKeActivity extends AppCompatActivity {
     private RecyclerView recyclerViewSach;
     ArrayList<Sach> arrayListSach;
     SachAdapter sachAdapter;
+    Toolbar tbSach;
     int idKe=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sach_trong_ke);
         AnhXa();
+        ActionBar();
         GetIdKeSach();
         GetDuLieuSach(idKe);
+    }
+
+    private void ActionBar() {
+        setSupportActionBar(tbSach);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        tbSach.setNavigationIcon(R.drawable.ic_return);
+        tbSach.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
     }
 
     private void GetIdKeSach() {
@@ -106,5 +121,6 @@ public class SachTrongKeActivity extends AppCompatActivity {
         recyclerViewSach.setHasFixedSize(true);
         recyclerViewSach.setLayoutManager(new GridLayoutManager(getApplicationContext(),2));
         recyclerViewSach.setAdapter(sachAdapter);
+        tbSach = findViewById(R.id.tbSachTrongKe);
     }
 }

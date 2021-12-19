@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     private MainViewPagerAdapter mainViewPagerAdapter;
     private Toolbar toolbarMain;
     private DrawerLayout drawerLayout;
-    private LinearLayout lnTimKiem,lnISBN,lnTaiKhoan;
+    private LinearLayout lnTimKiem,lnTaiKhoan;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -45,13 +45,6 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(),TimKiemActivity.class);
-                startActivity(intent);
-            }
-        });
-        lnISBN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MaISBNActivity.class);
                 startActivity(intent);
             }
         });
@@ -106,7 +99,6 @@ public class MainActivity extends AppCompatActivity {
         toolbarMain = findViewById(R.id.toolBarMain);
         drawerLayout = findViewById(R.id.drawerLayoutMain);
         lnTimKiem = findViewById(R.id.ln_search);
-        lnISBN = findViewById(R.id.ln_isbn);
         lnTaiKhoan = findViewById(R.id.ln_tk);
     }
 }

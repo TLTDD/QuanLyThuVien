@@ -73,8 +73,6 @@ public class DoiMatKhauBD extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),error.toString().trim(), Toast.LENGTH_SHORT).show();
 
                         }
-
-
                     }){
                         @Override
                         protected Map<String, String> getParams() throws AuthFailureError {

@@ -22,7 +22,7 @@
                 android:layout_width="100dp"
                 android:layout_height="100dp"/>
             <LinearLayout
-                android:orientation="vertical"
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <TextView
@@ -35,16 +35,20 @@
                     android:textSize="14sp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"/>
-                <TextView
-                    android:id="@+id/tvSoSach"
-                    android:fontFamily="@font/serif"
-                    android:textSize="12sp"
-                    android:layout_margin="5dp"
-                    android:layout_marginTop="2dp"
-                    android:text="Số sách"
-                    android:textColor="#f20"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                <LinearLayout
+                    android:layout_marginRight="50dp"
+                    android:gravity="right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <ImageView
+                        android:src="@drawable/ic_delete"
+                        android:id="@+id/btndeleteKeSach"
+                        android:layout_margin="2dp"
+                        android:adjustViewBounds="true"
+                        android:layout_width="32dp"
+                        android:layout_height="32dp"/>
+                </LinearLayout>
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
