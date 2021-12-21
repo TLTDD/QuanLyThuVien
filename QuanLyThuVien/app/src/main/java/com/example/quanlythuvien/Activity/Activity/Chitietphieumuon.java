@@ -47,6 +47,12 @@ public class Chitietphieumuon extends AppCompatActivity {
         setbtnBanDoc();
         getMaSach();
         setActionButton();
+        btntrove.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void getMaSach() {

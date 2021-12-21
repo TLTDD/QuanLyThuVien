@@ -69,6 +69,7 @@ public class DangKy extends AppCompatActivity {
                     Log.e("QB", "onResponse: " + response);
                     if (response.contains("success")) {
                         etName.setText("");
+                        etTaiKhoan.setText("");
                         etPassword.setText("");
                         etAgainPass.setText("");
                         txtStatus.setText("Tạo tài khoản thành công!");
