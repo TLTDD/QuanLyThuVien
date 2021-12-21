@@ -74,7 +74,7 @@
                 android:padding="15dp"
                 android:background="@drawable/border_dangnhap"
                 android:layout_marginTop="10dp"
-                android:layout_width="130dp"
+                android:layout_width="160dp"
                 android:layout_marginRight="10dp"
                 android:onClick="login"
                 android:layout_height="wrap_content"/>
