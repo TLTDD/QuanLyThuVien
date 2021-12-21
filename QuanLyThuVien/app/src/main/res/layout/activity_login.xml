@@ -89,6 +89,7 @@
                 android:fontFamily="@font/serif"
                 android:layout_marginRight="5dp"
                 android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
                 android:textStyle="bold"
                 android:text="Hoặc đăng nhập bằng tài khoản bạn đọc"
                 android:textColor="#f20"
@@ -107,15 +108,16 @@
             <Button
                 android:fontFamily="@font/cucho"
                 android:id="@+id/btndangnhapbd"
-                android:textColor="#f20"
-                android:backgroundTint="#00FF00"
+                android:textColor="#fff"
+                android:backgroundTint="#00A1B6"
                 android:textSize="18sp"
-                android:text="Đăng nhập cho bạn đọc >"
+                android:text="Đăng nhập cho bạn đọc "
                 android:padding="5dp"
                 android:background="@drawable/border_dangnhap"
                 android:layout_marginTop="10dp"
-                android:layout_width="wrap_content"
+                android:layout_width="220dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginLeft="8dp"
                 android:onClick="login"
                 android:layout_height="wrap_content"/>
         </LinearLayout>

@@ -99,6 +99,7 @@
                 android:fontFamily="@font/cucho"
                 android:id="@+id/btnBack"
                 android:textColor="@color/white"
+                android:backgroundTint="#f20"
                 android:textSize="18sp"
                 android:text="Trở lại"
                 android:padding="15dp"
@@ -110,9 +111,8 @@
                 android:layout_height="wrap_content"/>
             <Button
                 android:fontFamily="@font/cucho"
-                android:backgroundTint="#00FF00"
                 android:id="@+id/btndangky"
-                android:textColor="@color/black"
+                android:textColor="#fff"
                 android:textSize="18sp"
                 android:background="@drawable/border_dangnhap"
                 android:text="Đăng ký"
