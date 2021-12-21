@@ -5,12 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.RadioButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -24,20 +29,57 @@ import com.example.quanlythuvien.Activity.Fragment.BanDocFragment;
 import com.example.quanlythuvien.Activity.Util.Server;
 import com.example.quanlythuvien.R;
 
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Thembandoc extends AppCompatActivity {
-    EditText edtHoTenBD,edtMaSVBD,edtLop,edtNgaySinh,edtGioiTinh,edtDiaChi,edtSoDienThoai,edtEmail;
+    EditText edtHoTenBD,edtMaSVBD,edtLop,edtGioiTinh,edtDiaChi,edtSoDienThoai,edtEmail;
     Button btnThemBanDoc;
     Toolbar tbThemBanDoc;
+    RadioButton rdNam, rdNu;
+    TextView txtNgaySinh, txtHienthi;
+    String gioiTinh;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thembandoc);
         AnhXa();
+
+//        Radio button
+        CompoundButton.OnCheckedChangeListener listenerRadio = new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                if (b) {
+                    gioiTinh = "" + compoundButton.getText();
+                    txtHienthi.setText("Ban chon "+compoundButton.getText());
+                }
+            }
+        };
+
+        rdNam.setOnCheckedChangeListener(listenerRadio);
+        rdNu.setOnCheckedChangeListener(listenerRadio);
+
+
         ActionBar();
         setActionButton();
+    }
+
+    public void btnNgaySinh(View view) {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener(){
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                String dateString = dayOfMonth + "/" + month + "/" + year;
+                txtNgaySinh.setText(dateString);
+            }
+        },year,month, day);
+        datePickerDialog.show();
     }
 
     private void setActionButton() {
@@ -49,8 +91,8 @@ public class Thembandoc extends AppCompatActivity {
                 if(edtHoTenBD.getText().toString().trim().isEmpty()
                         ||edtMaSVBD.getText().toString().trim().isEmpty()
                         ||edtLop.getText().toString().trim().isEmpty()
-                        ||edtNgaySinh.getText().toString().trim().isEmpty()
-                        ||edtGioiTinh.getText().toString().trim().isEmpty()
+                        ||txtNgaySinh.getText().toString().trim().isEmpty()
+                        ||gioiTinh.isEmpty()
                         ||edtDiaChi.getText().toString().trim().isEmpty()
                         ||edtSoDienThoai.getText().toString().trim().isEmpty()
                         ||edtEmail.getText().toString().trim().isEmpty()){
@@ -92,7 +134,7 @@ public class Thembandoc extends AppCompatActivity {
                 param.put("hoTen",edtHoTenBD.getText().toString().trim());
                 param.put("maSV",edtMaSVBD.getText().toString().trim());
                 param.put("lop",edtLop.getText().toString().trim());
-                param.put("ngaySinh",edtNgaySinh.getText().toString().trim());
+                param.put("ngaySinh",txtNgaySinh.getText().toString().trim());
                 param.put("gioiTinh",edtGioiTinh.getText().toString().trim());
                 param.put("diaChi",edtDiaChi.getText().toString().trim());
                 param.put("soDienThoai",edtSoDienThoai.getText().toString().trim());
@@ -121,10 +163,13 @@ public class Thembandoc extends AppCompatActivity {
         edtHoTenBD = findViewById(R.id.edtHoTenBD);
         edtMaSVBD = findViewById(R.id.edtMaSVBD);
         edtLop = findViewById(R.id.edtLop);
-        edtNgaySinh = findViewById(R.id.edtNgaySinh);
-        edtGioiTinh = findViewById(R.id.edtGioiTinh);
+        txtNgaySinh = findViewById(R.id.txtDayBir);
         edtDiaChi = findViewById(R.id.edtDiaChi);
         edtSoDienThoai = findViewById(R.id.edtSoDienThoai);
         edtEmail = findViewById(R.id.edtEmail);
+        rdNam = findViewById(R.id.radio_nam);
+        rdNu = findViewById(R.id.radio_nu);
+        txtHienthi = findViewById(R.id.hienthi);
+
     }
 }

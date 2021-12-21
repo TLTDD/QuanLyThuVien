@@ -53,6 +53,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
+                    android:id="@+id/edtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:fontFamily="@font/serif"
+                    android:hint="Email"
+                    android:textSize="18sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
                     android:fontFamily="@font/serif"
                     android:textSize="18sp"
                     android:layout_margin="5dp"
@@ -61,32 +74,65 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="5dp"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:fontFamily="@font/serif"
+                android:layout_height="match_parent">
+                <TextView
                     android:textSize="18sp"
-                    android:layout_margin="5dp"
-                    android:id="@+id/edtNgaySinh"
-                    android:hint="Ngày sinh"
-                    android:layout_width="match_parent"
+                    android:layout_margin="9dp"
+                    android:layout_width="wrap_content"
+                    android:text="Ngày sinh"
                     android:layout_height="wrap_content"/>
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:fontFamily="@font/serif"
+                <ImageButton
+                    android:id="@+id/ivNgayTra"
+                    android:src="@drawable/calender"
+                    android:background="#fafafa"
+                    android:onClick="btnNgaySinh"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
                     android:textSize="18sp"
-                    android:layout_margin="5dp"
-                    android:id="@+id/edtGioiTinh"
-                    android:hint="Giới tính"
-                    android:layout_width="match_parent"
+                    android:layout_margin="9dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/txtDayBir"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="18sp"
+                    android:layout_margin="9dp"
+                    android:layout_width="wrap_content"
+                    android:text="Giới tính"
                     android:layout_height="wrap_content"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioGroup
+                        android:padding="10dp"
+                        android:layout_width="180dp"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                        <RadioButton
+                            android:id="@+id/radio_nam"
+                            android:text="Nam"
+                            android:checked="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                        <RadioButton
+                            android:id="@+id/radio_nu"
+                            android:text="Nữ"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </RadioGroup>
+                    <TextView
+                        android:text="hienthi"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/hienthi"/>
+                </LinearLayout>
+            </LinearLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
@@ -117,14 +163,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-                <EditText
-                    android:fontFamily="@font/serif"
-                    android:textSize="18sp"
-                    android:layout_margin="5dp"
-                    android:id="@+id/edtEmail"
-                    android:hint="Email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
+
             </com.google.android.material.textfield.TextInputLayout>
             <Button
                 android:layout_marginBottom="30dp"
