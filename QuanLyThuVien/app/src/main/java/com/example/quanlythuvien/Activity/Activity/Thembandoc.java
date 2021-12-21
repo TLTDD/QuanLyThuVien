@@ -52,7 +52,6 @@ public class Thembandoc extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
                 if (b) {
                     gioiTinh = "" + compoundButton.getText();
-                    txtHienthi.setText("Ban chon "+compoundButton.getText());
                 }
             }
         };
@@ -135,7 +134,7 @@ public class Thembandoc extends AppCompatActivity {
                 param.put("maSV",edtMaSVBD.getText().toString().trim());
                 param.put("lop",edtLop.getText().toString().trim());
                 param.put("ngaySinh",txtNgaySinh.getText().toString().trim());
-                param.put("gioiTinh",edtGioiTinh.getText().toString().trim());
+                param.put("gioiTinh",gioiTinh);
                 param.put("diaChi",edtDiaChi.getText().toString().trim());
                 param.put("soDienThoai",edtSoDienThoai.getText().toString().trim());
                 param.put("email",edtEmail.getText().toString().trim());
@@ -169,7 +168,5 @@ public class Thembandoc extends AppCompatActivity {
         edtEmail = findViewById(R.id.edtEmail);
         rdNam = findViewById(R.id.radio_nam);
         rdNu = findViewById(R.id.radio_nu);
-        txtHienthi = findViewById(R.id.hienthi);
-
     }
 }
