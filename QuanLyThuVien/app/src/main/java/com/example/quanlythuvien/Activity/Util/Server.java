@@ -20,4 +20,5 @@ public class Server {
     public static String Đuongdandangky = "http://" + localhost + "/thuvienute/login/register.php";
     public static String Duongdanxoake = "http://" + localhost + "/thuvienute/deletekesach.php";
     public static String Duongdanxoabandoc = "http://" + localhost + "/thuvienute/deletebandoc.php";
+    public static String Duongdanxoaphieumuon = "http://" + localhost + "/thuvienute/deletephieumuon.php";
 }

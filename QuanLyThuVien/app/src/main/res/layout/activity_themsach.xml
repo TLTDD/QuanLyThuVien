@@ -30,19 +30,6 @@
                     android:fontFamily="@font/serif"
                     android:textSize="18sp"
                     android:layout_margin="5dp"
-                    android:id="@+id/edtIdKeSach"
-                    android:hint="Kệ sách"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:fontFamily="@font/serif"
-                    android:textSize="18sp"
-                    android:layout_margin="5dp"
                     android:id="@+id/edtTenSach"
                     android:hint="Tên sách"
                     android:layout_width="match_parent"
@@ -131,6 +118,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <EditText
+                    android:inputType="number"
                     android:fontFamily="@font/serif"
                     android:textSize="18sp"
                     android:layout_margin="5dp"
@@ -161,7 +149,20 @@
                     android:textSize="18sp"
                     android:layout_margin="5dp"
                     android:id="@+id/edtHinhAnhSach"
-                    android:hint="Hình ảnh sách"
+                    android:hint="Link hình ảnh sách"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+            </com.google.android.material.textfield.TextInputLayout>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:fontFamily="@font/serif"
+                    android:textSize="18sp"
+                    android:layout_margin="5dp"
+                    android:id="@+id/edtIdKeSach"
+                    android:hint="Kệ sách số"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>

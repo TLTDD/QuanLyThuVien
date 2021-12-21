@@ -90,7 +90,6 @@ public class ThongTinTaiKhoan extends AppCompatActivity {
                 Map<String, String> param = new HashMap<>();
                 param.put("id",String.valueOf(idUser));
                 param.put("name",edname.getText().toString().trim());
-                param.put("taiKhoan",edemail.getText().toString().trim());
                 param.put("ngaySinh",eddate.getText().toString().trim());
                 param.put("diaChi",edaddress.getText().toString().trim());
                 param.put("soDienThoai",edphone.getText().toString().trim());
@@ -114,7 +113,6 @@ public class ThongTinTaiKhoan extends AppCompatActivity {
                             edaddress.setText(jsonObject.getString("diaChi"));
                             edphone.setText(String.valueOf(jsonObject.getInt("soDienThoai")));
                             eddate.setText(jsonObject.getString("ngaySinh"));
-                            edemail.setText(jsonObject.getString("taiKhoan"));
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -139,6 +137,5 @@ public class ThongTinTaiKhoan extends AppCompatActivity {
         edaddress = findViewById(R.id.edt_tk_dchi);
         edphone = findViewById(R.id.edt_tk_sdt);
         eddate = findViewById(R.id.edt_tk_ngsinh);
-        edemail = findViewById(R.id.edt_tk_em);
     }
 }

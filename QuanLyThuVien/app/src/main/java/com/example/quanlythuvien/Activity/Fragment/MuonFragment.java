@@ -12,10 +12,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.quanlythuvien.Activity.Adapter.BanDocAdapter;
 import com.example.quanlythuvien.Activity.Adapter.PhieuMuonAdapter;
@@ -31,6 +34,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MuonFragment extends Fragment {
     private View view;
@@ -54,6 +59,35 @@ public class MuonFragment extends Fragment {
         return view;
     }
 
+    public void DeletePhieuMuon(String maSach){
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.Duongdanxoaphieumuon, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if(response.trim().equals("success")){
+                    CheckConnection.ShowToast_Short(getActivity(),"Xóa thành công");
+                    GetDuLieuLoaiSP();
+                }else {
+                    CheckConnection.ShowToast_Short(getActivity(),"Xóa không thành công");
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                CheckConnection.ShowToast_Short(getActivity(),"Xóa không thành công");
+            }
+        }){
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> params = new HashMap<>();
+                params.put("maSach",String.valueOf(maSach));
+                return params;
+            }
+        };
+        requestQueue.add(stringRequest);
+    }
+
     private void GetDuLieuLoaiSP() {
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Server.Duongdanphieumuon, new Response.Listener<JSONArray>() {
@@ -61,7 +95,7 @@ public class MuonFragment extends Fragment {
             public void onResponse(JSONArray response) {
 
                 if (response != null){
-
+                    arrayListPhieuMuon.clear();
                     for (int i = 0;i < response.length();i++){
                         try {
                             JSONObject jsonObject = response.getJSONObject(i);
@@ -95,6 +129,6 @@ public class MuonFragment extends Fragment {
     private void AnhXa() {
         lvPhieuMuon = view.findViewById(R.id.lvPhieuMuon);
         arrayListPhieuMuon = new ArrayList<>();
-        phieumuonAdapter = new PhieuMuonAdapter(arrayListPhieuMuon,getActivity());
+        phieumuonAdapter = new PhieuMuonAdapter(arrayListPhieuMuon,MuonFragment.this);
     }
 }
