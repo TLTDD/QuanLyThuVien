@@ -35,7 +35,7 @@ public class SachTrongKeActivity extends AppCompatActivity {
     ArrayList<Sach> arrayListSach;
     SachAdapter sachAdapter;
     Toolbar tbSach;
-    int idKe=0;
+    String idKe="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,11 +59,11 @@ public class SachTrongKeActivity extends AppCompatActivity {
     }
 
     private void GetIdKeSach() {
-        idKe = getIntent().getIntExtra("idKeSach",-1);
+        idKe = getIntent().getStringExtra("idKeSach");
         Log.d("idKeSach",idKe+"");
     }
 
-    private void GetDuLieuSach(int Ke) {
+    private void GetDuLieuSach(String Ke) {
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         String duongdan = Server.Duongdansachtheoke+String.valueOf(Ke);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(duongdan, new Response.Listener<JSONArray>() {
@@ -71,7 +71,7 @@ public class SachTrongKeActivity extends AppCompatActivity {
             public void onResponse(JSONArray response) {
                 if(response!=null){
                     int id=0;
-                    int idKeSach = 0;
+                    String idKeSach = "";
                     String tenSach = "";
                     String tenTacGia = "";
                     String nhaXuatBan = "";
@@ -86,7 +86,7 @@ public class SachTrongKeActivity extends AppCompatActivity {
                         try {
                             JSONObject jsonObject = response.getJSONObject(i);
                             id = jsonObject.getInt("id");
-                            idKeSach = jsonObject.getInt("idKeSach");
+                            idKeSach = jsonObject.getString("tenKeSach");
                             tenSach = jsonObject.getString("tenSach");
                             tenTacGia = jsonObject.getString("tenTacGia");
                             nhaXuatBan = jsonObject.getString("nhaXuatBan");

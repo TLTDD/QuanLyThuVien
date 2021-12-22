@@ -112,7 +112,7 @@ public class MainBanDoc extends AppCompatActivity {
             public void onResponse(JSONArray response) {
                 if(response!=null){
                     int id=0;
-                    int idKeSach = 0;
+                    String idKeSach = "";
                     String tenSach = "";
                     String tenTacGia = "";
                     String nhaXuatBan = "";
@@ -127,7 +127,7 @@ public class MainBanDoc extends AppCompatActivity {
                         try {
                             JSONObject jsonObject = response.getJSONObject(i);
                             id = jsonObject.getInt("id");
-                            idKeSach = jsonObject.getInt("idKeSach");
+                            idKeSach = jsonObject.getString("tenKeSach");
                             tenSach = jsonObject.getString("tenSach");
                             tenTacGia = jsonObject.getString("tenTacGia");
                             nhaXuatBan = jsonObject.getString("nhaXuatBan");

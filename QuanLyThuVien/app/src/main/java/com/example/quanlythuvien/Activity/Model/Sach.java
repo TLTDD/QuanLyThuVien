@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public class Sach implements Serializable {
     public int id;
-    public int idKeSach;
+    public String idKeSach;
     public String tenSach;
     public String tenTacGia;
     public String nhaXuatBan;
@@ -16,7 +16,7 @@ public class Sach implements Serializable {
     public String loiTua;
     public String hinhAnhSach;
 
-    public Sach(int id, int idKeSach, String tenSach, String tenTacGia,String nhaXuatBan, String ngayXuatBan, String ngonNgu, int giaSach, String soSeries, Integer soLuong, String loiTua,String hinhAnhSach) {
+    public Sach(int id, String idKeSach, String tenSach, String tenTacGia,String nhaXuatBan, String ngayXuatBan, String ngonNgu, int giaSach, String soSeries, Integer soLuong, String loiTua,String hinhAnhSach) {
         this.id = id;
         this.idKeSach = idKeSach;
         this.tenSach = tenSach;
@@ -47,11 +47,11 @@ public class Sach implements Serializable {
         this.id = id;
     }
 
-    public Integer getIdKeSach() {
+    public String getIdKeSach() {
         return idKeSach;
     }
 
-    public void setIdKeSach(Integer idKeSach) {
+    public void setIdKeSach(String idKeSach) {
         this.idKeSach = idKeSach;
     }
 

@@ -6,7 +6,7 @@
     while($row = mysqli_fetch_assoc($data)){
         array_push($mangspmoinhat, new Sanphammoinhat(
             $row['id'],
-            $row['idKeSach'],
+            $row['tenKeSach'],
             $row['tenSach'],
             $row['tenTacGia'],
             $row['nhaXuatBan'],
@@ -20,9 +20,9 @@
     }
     echo json_encode($mangspmoinhat);
     class Sanphammoinhat{
-        function __construct($id,$idKeSach,$tenSach,$tenTacGia,$nhaXuatBan,$ngayXuatBan,$ngonNgu,$giaSach,$soSeries,$soLuong,$loiTua,$hinhAnhSach) {
+        function __construct($id,$tenKeSach,$tenSach,$tenTacGia,$nhaXuatBan,$ngayXuatBan,$ngonNgu,$giaSach,$soSeries,$soLuong,$loiTua,$hinhAnhSach) {
             $this->id = $id;
-            $this->idKeSach = $idKeSach;
+            $this->tenKeSach = $tenKeSach;
             $this->tenSach = $tenSach;
             $this->tenTacGia = $tenTacGia;
             $this->nhaXuatBan = $nhaXuatBan;

@@ -102,7 +102,7 @@ public class KeSachFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent= new Intent(getActivity(), SachTrongKeActivity.class);
-                intent.putExtra("idKeSach",arrayListKeSach.get(position).getId());
+                intent.putExtra("idKeSach",arrayListKeSach.get(position).getTenKeSach());
                 startActivity(intent);
             }
         });

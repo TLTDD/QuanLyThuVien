@@ -85,7 +85,7 @@ public class TimKiemSachBD extends AppCompatActivity {
             public void onResponse(JSONArray response) {
                 if(response!=null){
                     int id=0;
-                    int idKeSach = 0;
+                    String idKeSach = "";
                     String tenSach = "";
                     String tenTacGia = "";
                     String nhaXuatBan = "";
@@ -100,7 +100,7 @@ public class TimKiemSachBD extends AppCompatActivity {
                         try {
                             JSONObject jsonObject = response.getJSONObject(i);
                             id = jsonObject.getInt("id");
-                            idKeSach = jsonObject.getInt("idKeSach");
+                            idKeSach = jsonObject.getString("tenKeSach");
                             tenSach = jsonObject.getString("tenSach");
                             tenTacGia = jsonObject.getString("tenTacGia");
                             nhaXuatBan = jsonObject.getString("nhaXuatBan");
@@ -145,7 +145,7 @@ public class TimKiemSachBD extends AppCompatActivity {
         lnHome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(),MainBanDoc.class);
                 startActivity(intent);
             }
         });

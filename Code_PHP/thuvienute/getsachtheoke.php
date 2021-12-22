@@ -1,13 +1,13 @@
 <?php
     include "connect.php";
-    $idKeSach = $_GET['idKeSach'];
+    $tenKeSach = $_GET['tenKeSach'];
     $mangsach = array();
-    $query = "SELECT * FROM sach WHERE idKeSach = '$idKeSach'";
+    $query = "SELECT * FROM sach WHERE tenKeSach = '$tenKeSach'";
     $data = mysqli_query($conn, $query);
     while ($row = mysqli_fetch_assoc($data)){
         array_push($mangsach,new Sach(
             $row['id'], 
-            $row['idKeSach'],
+            $row['tenKeSach'],
             $row['tenSach'],
             $row['tenTacGia'],
             $row['nhaXuatBan'],
@@ -22,9 +22,9 @@
     echo json_encode($mangsach);
     
     class Sach{
-        function __construct($id,$idKeSach,$tenSach,$tenTacGia,$nhaXuatBan,$ngayXuatBan,$ngonNgu,$giaSach,$soSeries,$soLuong,$loiTua,$hinhAnhSach) {
+        function __construct($id,$tenKeSach,$tenSach,$tenTacGia,$nhaXuatBan,$ngayXuatBan,$ngonNgu,$giaSach,$soSeries,$soLuong,$loiTua,$hinhAnhSach) {
             $this->id = $id;
-            $this->idKeSach = $idKeSach;
+            $this->tenKeSach = $tenKeSach;
             $this->tenSach = $tenSach;
             $this->tenTacGia = $tenTacGia;
             $this->nhaXuatBan = $nhaXuatBan;

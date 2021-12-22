@@ -45,7 +45,7 @@ public class ThongTinFragment extends Fragment {
     private Button btnThemMuon;
     private TextView tvTenSach,tvTacGia,tvNXB,tvSeries,tvNSX,tvNgonNgu,tvGiaSach,tvLoiTua;
     int id=0;
-    int idKeSach = 0;
+    String idKeSach = "";
     String tenSach = "";
     String tenTacGia = "";
     String nhaXuatBan = "";

@@ -22,6 +22,17 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+            <!--<com.google.android.material.textfield.TextInputLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">-->
+            <Spinner
+                android:id="@+id/spn_kesach"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                android:background="#ccc"/>
+            <!--            </com.google.android.material.textfield.TextInputLayout>-->
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
@@ -153,19 +164,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-                <EditText
-                    android:fontFamily="@font/serif"
-                    android:textSize="18sp"
-                    android:layout_margin="5dp"
-                    android:id="@+id/edtIdKeSach"
-                    android:hint="Kệ sách số"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            </com.google.android.material.textfield.TextInputLayout>
+
             <Button
                 android:layout_marginBottom="30dp"
                 android:fontFamily="@font/cucho"
