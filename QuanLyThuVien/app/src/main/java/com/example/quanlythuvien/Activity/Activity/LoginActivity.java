@@ -28,6 +28,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText etTaiKhoan,etPassword;
     private String taikhoan, password;
     public static String taiKhoanDN ="";
+    public static String taiKhoanDN1 ="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,8 +58,40 @@ public class LoginActivity extends AppCompatActivity {
                         finish();
                         Log.e("QB", "onResponse: " + response);
                     }else if(response.contains("failure")) {
+                        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.Duongdandangnhapbd, new Response.Listener<String>() {
+                            @Override
+                            public void onResponse(String response) {
+                                if(response.contains("success")){
+                                    Intent intent = new Intent(LoginActivity.this, MainBanDoc.class);
+                                    taiKhoanDN1 = etTaiKhoan.getText().toString().trim();
+                                    intent.putExtra("taiKhoan",taiKhoanDN1);
+                                    startActivity(intent);
+                                    finish();
+                                    Log.e("QB", "onResponse: " + response);
+                                }else if(response.contains("failure")) {
 
-                        Toast.makeText(LoginActivity.this, "Nhập sai tài khoản hoặc mật khẩu", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(LoginActivity.this, "Nhập sai tài khoản hoặc mật khẩu", Toast.LENGTH_SHORT).show();
+                                }
+                                else {
+                                    Toast.makeText(LoginActivity.this, "onResponse: " + response, Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }, new Response.ErrorListener() {
+                            @Override
+                            public void onErrorResponse(VolleyError error) {
+                                Toast.makeText(getApplicationContext(),error.toString().trim(), Toast.LENGTH_SHORT).show();
+                            }
+                        }){
+                            @Override
+                            protected Map<String, String> getParams() throws AuthFailureError {
+                                Map<String, String> data = new HashMap<>();
+                                data.put("taiKhoan",taikhoan);
+                                data.put("password",password);
+                                return data;
+                            }
+                        };
+                        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+                        requestQueue.add(stringRequest);
                     }
                     else {
                         Toast.makeText(LoginActivity.this, "onResponse: " + response, Toast.LENGTH_SHORT).show();
@@ -89,6 +122,6 @@ public class LoginActivity extends AppCompatActivity {
         btndangnhap = findViewById(R.id.btndangnhap);
         etTaiKhoan = findViewById(R.id.edtTaiKhoan);
         etPassword = findViewById(R.id.edtMatKhau);
-        btndnbd = findViewById(R.id.btndangnhapbd);
+        btndnbd = findViewById(R.id.btndangky);
     }
 }

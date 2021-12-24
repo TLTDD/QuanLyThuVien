@@ -38,7 +38,7 @@ public class TaiKhoanBD extends AppCompatActivity {
         AnhXa();
         OnClickMenu();
         ActionBar();
-        taikhoan = BanDocLogin.taiKhoanDN.trim();
+        taikhoan = LoginActivity.taiKhoanDN1.trim();
         readJson(Server.Duongdanthuthu+taikhoan);
         btnttk.setOnClickListener(new View.OnClickListener() {
             @Override

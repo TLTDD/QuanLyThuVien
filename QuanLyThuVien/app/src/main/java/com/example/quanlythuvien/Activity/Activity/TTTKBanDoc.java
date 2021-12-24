@@ -39,7 +39,7 @@ public class TTTKBanDoc extends AppCompatActivity {
         setContentView(R.layout.activity_tttkban_doc);
         AnhXa();
         ActionToolbar();
-        taikhoan = BanDocLogin.taiKhoanDN.trim();
+        taikhoan = LoginActivity.taiKhoanDN1.trim();
         readJson(Server.Duongdanthuthu+taikhoan);
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override

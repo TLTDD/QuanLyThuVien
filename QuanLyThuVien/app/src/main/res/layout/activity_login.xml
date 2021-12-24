@@ -26,7 +26,7 @@
             android:layout_marginRight="5dp"
             android:layout_marginLeft="5dp"
             android:textStyle="bold"
-            android:text="Đăng nhập cho thủ thư"
+            android:text="ĐĂNG NHẬP"
             android:textColor="#f20"
             android:textSize="20sp"
             android:layout_width="wrap_content"
@@ -80,25 +80,7 @@
                 android:onClick="login"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
-        <LinearLayout
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center">
-            <TextView
-                android:fontFamily="@font/serif"
-                android:layout_marginRight="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginTop="10dp"
-                android:textStyle="bold"
-                android:text="Hoặc đăng nhập bằng tài khoản bạn đọc"
-                android:textColor="#f20"
-                android:textSize="16sp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
 
-        </LinearLayout>
         <LinearLayout
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
@@ -108,12 +90,12 @@
             android:gravity="center">
             <Button
                 android:fontFamily="@font/cucho"
-                android:id="@+id/btndangnhapbd"
+                android:id="@+id/btndangky"
                 android:textColor="#fff"
                 android:drawableStart="@drawable/icons8_login"
                 android:backgroundTint="#00A1B6"
                 android:textSize="18sp"
-                android:text="Đăng nhập cho bạn đọc "
+                android:text="Đăng ký tài khoản bạn đọc "
                 android:padding="5dp"
                 android:background="@drawable/border_dangnhap"
                 android:layout_marginTop="10dp"

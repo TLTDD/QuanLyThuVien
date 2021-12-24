@@ -79,7 +79,7 @@ public class DoiMatKhauBD extends AppCompatActivity {
                             Map<String, String> data = new HashMap<>();
                             data.put("OldPass",OldPass);
                             data.put("NewPass",NewPass);
-                            data.put("taiKhoan", BanDocLogin.taiKhoanDN.trim());
+                            data.put("taiKhoan", LoginActivity.taiKhoanDN1.trim());
                             return data;
                         }
 
