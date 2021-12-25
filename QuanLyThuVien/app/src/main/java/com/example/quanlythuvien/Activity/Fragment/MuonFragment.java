@@ -60,34 +60,34 @@ public class MuonFragment extends Fragment {
         return view;
     }
 
-    public void DeletePhieuMuon(String maSach){
-        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.Duongdanxoaphieumuon, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                if(response.trim().equals("success")){
-                    CheckConnection.ShowToast_Short(getActivity(),"Xóa thành công");
-                    GetDuLieuLoaiSP();
-                }else {
-                    CheckConnection.ShowToast_Short(getActivity(),"Xóa không thành công");
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                CheckConnection.ShowToast_Short(getActivity(),"Xóa không thành công");
-            }
-        }){
-            @Nullable
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> params = new HashMap<>();
-                params.put("maSach",String.valueOf(maSach));
-                return params;
-            }
-        };
-        requestQueue.add(stringRequest);
-    }
+//    public void DeletePhieuMuon(String maSach){
+//        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+//        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.Duongdanxoaphieumuon, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+//                if(response.trim().equals("success")){
+//                    CheckConnection.ShowToast_Short(getActivity(),"Xóa thành công");
+//                    GetDuLieuLoaiSP();
+//                }else {
+//                    CheckConnection.ShowToast_Short(getActivity(),"Xóa không thành công");
+//                }
+//            }
+//        }, new Response.ErrorListener() {
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+//                CheckConnection.ShowToast_Short(getActivity(),"Xóa không thành công");
+//            }
+//        }){
+//            @Nullable
+//            @Override
+//            protected Map<String, String> getParams() throws AuthFailureError {
+//                Map<String,String> params = new HashMap<>();
+//                params.put("maSach",String.valueOf(maSach));
+//                return params;
+//            }
+//        };
+//        requestQueue.add(stringRequest);
+//    }
 
     public void UpdatePhieuMuon(String maSach){
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());

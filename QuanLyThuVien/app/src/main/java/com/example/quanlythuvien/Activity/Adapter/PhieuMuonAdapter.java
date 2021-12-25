@@ -67,7 +67,7 @@ public class PhieuMuonAdapter extends BaseAdapter {
             viewHolder.tvNgayMuon = convertView.findViewById(R.id.tvNgayMuon);
             viewHolder.tvNgayTra = convertView.findViewById(R.id.tvNgayTra);
             viewHolder.tvTinhTrang = convertView.findViewById(R.id.tvTinhTrang);
-            viewHolder.btnDelete = convertView.findViewById(R.id.btndeletePhieuMuon);
+            //viewHolder.btnDelete = convertView.findViewById(R.id.btndeletePhieuMuon);
             viewHolder.btnTraSach = convertView.findViewById(R.id.btnTraSach);
             convertView.setTag(viewHolder);
         }
@@ -85,12 +85,12 @@ public class PhieuMuonAdapter extends BaseAdapter {
             viewHolder.btnTraSach.setEnabled(false);
             viewHolder.btnTraSach.setBackgroundColor(Color.parseColor("#c1c1c1"));
         }
-        viewHolder.btnDelete.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                XacNhanXoa(phieumuon.getHoTen(),phieumuon.getMaSach());
-            }
-        });
+//        viewHolder.btnDelete.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                XacNhanXoa(phieumuon.getHoTen(),phieumuon.getMaSach());
+//            }
+//        });
         viewHolder.btnTraSach.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,23 +100,23 @@ public class PhieuMuonAdapter extends BaseAdapter {
         return convertView;
     }
 
-    private void XacNhanXoa(String ten,final String maSach){
-        AlertDialog.Builder dialogXoa = new AlertDialog.Builder(context.getActivity());
-        dialogXoa.setMessage("Bạn có muốn xóa "+ten+" không?");
-        dialogXoa.setPositiveButton("Có", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                context.DeletePhieuMuon(maSach);
-            }
-        });
-        dialogXoa.setNegativeButton("Không", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-
-            }
-        });
-        dialogXoa.show();
-    }
+//    private void XacNhanXoa(String ten,final String maSach){
+//        AlertDialog.Builder dialogXoa = new AlertDialog.Builder(context.getActivity());
+//        dialogXoa.setMessage("Bạn có muốn xóa "+ten+" không?");
+//        dialogXoa.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//                context.DeletePhieuMuon(maSach);
+//            }
+//        });
+//        dialogXoa.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+//            @Override
+//            public void onClick(DialogInterface dialog, int which) {
+//
+//            }
+//        });
+//        dialogXoa.show();
+//    }
 
     private void XacNhanTraSach(String ten,final String maSach){
         AlertDialog.Builder dialogXoa = new AlertDialog.Builder(context.getActivity());

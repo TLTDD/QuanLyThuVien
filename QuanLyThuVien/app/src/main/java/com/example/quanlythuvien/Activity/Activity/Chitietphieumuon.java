@@ -143,7 +143,8 @@ public class Chitietphieumuon extends AppCompatActivity {
             public void onResponse(String response) {
                 if(response.contains("success")){
                     Toast.makeText(getApplicationContext(), "Đã thêm thành công !", Toast.LENGTH_SHORT).show();
-                    finish();
+                    Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                    startActivity(intent);
                 }
                 else{
                     Toast.makeText(getApplicationContext(), "Lỗi ngày trả sách!! !", Toast.LENGTH_SHORT).show();

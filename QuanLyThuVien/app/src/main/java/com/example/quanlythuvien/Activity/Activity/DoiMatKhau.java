@@ -48,7 +48,7 @@ public class DoiMatKhau extends AppCompatActivity {
         });
     }
 
-    public  void setBtnResetPass(){
+    public void setBtnResetPass(){
         btnResetPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -74,8 +74,6 @@ public class DoiMatKhau extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),error.toString().trim(), Toast.LENGTH_SHORT).show();
 
                         }
-
-
                     }){
                         @Override
                         protected Map<String, String> getParams() throws AuthFailureError {

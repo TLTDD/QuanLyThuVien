@@ -72,19 +72,32 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"/>
             </com.google.android.material.textfield.TextInputLayout>
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_gravity="left"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-                <EditText
+                <TextView
                     android:fontFamily="@font/serif"
+                    android:layout_width="wrap_content"
+                    android:text="Ngày xuất bản"
                     android:textSize="18sp"
-                    android:layout_margin="5dp"
-                    android:id="@+id/edtNgayXB"
-                    android:hint="Ngày xuất bản"
-                    android:layout_width="match_parent"
+                    android:layout_margin="10dp"
                     android:layout_height="wrap_content"/>
-            </com.google.android.material.textfield.TextInputLayout>
+                <ImageButton
+                    android:id="@+id/ivNgayXB"
+                    android:src="@drawable/calender"
+                    android:layout_width="40dp"
+                    android:background="#fafafa"
+                    android:onClick="btnSetDateNm_click"
+                    android:layout_height="40dp"/>
+                <TextView
+                    android:id="@+id/txtNgayXB"
+                    android:layout_width="wrap_content"
+                    android:textSize="18dp"
+                    android:textColor="#FF0303"
+                    android:layout_margin="10dp"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_marginTop="5dp"
                 android:layout_width="match_parent"

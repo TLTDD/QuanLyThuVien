@@ -5,15 +5,19 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -39,13 +43,16 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class ThemSach extends AppCompatActivity {
-    EditText edtIdKeSach,edtTenSach,edtTacGia,edtNXB,edtNgayXB,edtNgonNgu,edtgiaSach,edtSoSeries,edtSoLuong,edtLoiTua,edtHinhAnhSach;
+    EditText edtIdKeSach,edtTenSach,edtTacGia,edtNXB,edtNgonNgu,edtgiaSach,edtSoSeries,edtSoLuong,edtLoiTua,edtHinhAnhSach;
     Button btnThemSach;
+    ImageButton ivNXB;
+    TextView edtNgayXB;
     Toolbar tbThemSach;
     Spinner spnKeSach;
     KeSachAdapter1 keSachAdapter;
@@ -148,6 +155,23 @@ public class ThemSach extends AppCompatActivity {
         });
     }
 
+    public void btnSetDateNm_click(View view) {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this, new DatePickerDialog.OnDateSetListener(){
+
+            @Override
+            public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                String dateString = year + "-" + (month+1) + "-" + dayOfMonth;
+                edtNgayXB.setText(dateString);
+            }
+        },year,month, day);
+        datePickerDialog.show();
+    }
+
     private void AddSach(){
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.Duongdanthemsach, new Response.Listener<String>() {
@@ -208,10 +232,11 @@ public class ThemSach extends AppCompatActivity {
         tbThemSach = findViewById(R.id.tbThemSach);
         //edtIdKeSach = findViewById(R.id.edtIdKeSach);
         spnKeSach = findViewById(R.id.spn_kesach);
+        ivNXB = findViewById(R.id.ivNgayXB);
         edtTenSach = findViewById(R.id.edtTenSach);
         edtTacGia = findViewById(R.id.edtTacGia);
         edtNXB = findViewById(R.id.edtNXB);
-        edtNgayXB = findViewById(R.id.edtNgayXB);
+        edtNgayXB = findViewById(R.id.txtNgayXB);
         edtNgonNgu = findViewById(R.id.edtNgonNgu);
         edtgiaSach = findViewById(R.id.edtgiaSach);
         edtSoSeries = findViewById(R.id.edtSoSeries);
