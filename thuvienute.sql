@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th12 22, 2021 lúc 05:16 AM
--- Phiên bản máy phục vụ: 10.4.22-MariaDB
--- Phiên bản PHP: 8.1.0
+-- Host: 127.0.0.1
+-- Generation Time: Dec 25, 2021 at 09:46 AM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,65 +18,63 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Cơ sở dữ liệu: `thuvienute`
+-- Database: `thuvienute`
 --
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `bandoc`
+-- Table structure for table `bandoc`
 --
 
 CREATE TABLE `bandoc` (
   `id` int(11) NOT NULL,
-  `hoTen` varchar(255) NOT NULL,
-  `maSV` varchar(255) NOT NULL,
-  `lop` varchar(255) NOT NULL,
-  `ngaySinh` varchar(255) NOT NULL,
-  `gioiTinh` varchar(255) NOT NULL,
-  `diaChi` varchar(255) NOT NULL,
-  `soDienThoai` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `hoTen` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `maSV` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `lop` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ngaySinh` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `gioiTinh` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `diaChi` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `soDienThoai` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `bandoc`
+-- Dumping data for table `bandoc`
 --
 
 INSERT INTO `bandoc` (`id`, `hoTen`, `maSV`, `lop`, `ngaySinh`, `gioiTinh`, `diaChi`, `soDienThoai`, `email`) VALUES
-(1, 'Nguyễn Quang Huy', '1911505310224', '19T2', '12/12/1999', 'Nam', 'Kon Tum', '0961640909', 'huylmht10@gmail.com'),
-(2, 'Bùi Văn Sỷ', '1911505310248', '19T2', '10/6/2001', 'Nam', 'Quản Trị', '\r\n0947895039', '\r\nsybuivan1429@gmail.com'),
-(9, 'Phạm Văn Thiên', '1911505410245', '19T2', '12/4/2001', 'Nam', 'Quãng Nam', '09616450906', 'pvthien@gmail.com');
+(1, 'Bùi Văn Sỷ', '1911505310248', '19T2', '20/10/2001', 'Nam', 'Gio Linh - Quảng Trị', '0947905039', 'buivansy14@gmail.com'),
+(2, 'Nguyễn Quang Huy', '1911505310224', '19T2', '12/12/1999', 'Nam', 'Kontum', '0938493993', 'nguyenquanghuy99@gmail.com'),
+(3, 'Nguyễn Thanh Nhân', '1911505310242', '19T2', '11/2/2001', 'Nam', 'Đà Nẵng', '093887472', 'nguyentn22@gmail.com');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `chitietmuon`
+-- Table structure for table `chitietmuon`
 --
 
 CREATE TABLE `chitietmuon` (
   `id` int(11) NOT NULL,
   `maPM` int(11) NOT NULL,
-  `tenSach` varchar(255) NOT NULL,
-  `maSach` varchar(255) NOT NULL,
-  `ngayMuon` varchar(255) NOT NULL,
-  `ngayHetHan` varchar(255) NOT NULL,
-  `trangThai` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `tenSach` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `maSach` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `ngayMuon` date NOT NULL,
+  `ngayHetHan` date DEFAULT NULL CHECK (`ngayHetHan` > `ngayMuon`),
+  `trangThai` varchar(255) COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
--- Đang đổ dữ liệu cho bảng `chitietmuon`
+-- Dumping data for table `chitietmuon`
 --
 
 INSERT INTO `chitietmuon` (`id`, `maPM`, `tenSach`, `maSach`, `ngayMuon`, `ngayHetHan`, `trangThai`) VALUES
-(1, 1, 'Đổi Đen Thay Trắng', '3', '12/12/2021', '11/01/2021', 'Đang mượn'),
-(3, 2, 'Hồ Nữ', '6', '16/12/2021', '1/1/2022', 'Đang mượn'),
-(6, 2, 'Cát Bụi Chân Ai', '5', '9/11/2021', '31/11/2021', 'Đang mượn');
+(10, 9, 'Ngữ Pháp Tiếng Hàn Cơ Bản', '2', '2021-12-15', '2021-12-31', 'Đang mượn');
 
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `kesach`
+-- Table structure for table `kesach`
 --
 
 CREATE TABLE `kesach` (
@@ -85,7 +83,7 @@ CREATE TABLE `kesach` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `kesach`
+-- Dumping data for table `kesach`
 --
 
 INSERT INTO `kesach` (`id`, `tenKeSach`) VALUES
@@ -96,7 +94,7 @@ INSERT INTO `kesach` (`id`, `tenKeSach`) VALUES
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `sach`
+-- Table structure for table `sach`
 --
 
 CREATE TABLE `sach` (
@@ -115,7 +113,7 @@ CREATE TABLE `sach` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `sach`
+-- Dumping data for table `sach`
 --
 
 INSERT INTO `sach` (`id`, `tenKeSach`, `tenSach`, `tenTacGia`, `nhaXuatBan`, `ngayXuatBan`, `ngonNgu`, `giaSach`, `soSeries`, `soLuong`, `loiTua`, `hinhAnhSach`) VALUES
@@ -131,7 +129,7 @@ INSERT INTO `sach` (`id`, `tenKeSach`, `tenSach`, `tenTacGia`, `nhaXuatBan`, `ng
 -- --------------------------------------------------------
 
 --
--- Cấu trúc bảng cho bảng `taikhoan`
+-- Table structure for table `taikhoan`
 --
 
 CREATE TABLE `taikhoan` (
@@ -146,7 +144,7 @@ CREATE TABLE `taikhoan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Đang đổ dữ liệu cho bảng `taikhoan`
+-- Dumping data for table `taikhoan`
 --
 
 INSERT INTO `taikhoan` (`id`, `name`, `taiKhoan`, `password`, `soDienThoai`, `diaChi`, `ngaySinh`, `maQuyen`) VALUES
@@ -155,69 +153,69 @@ INSERT INTO `taikhoan` (`id`, `name`, `taiKhoan`, `password`, `soDienThoai`, `di
 (4, 'Phạm Văn Thiên', '1911505310224', '1', '0961640909', 'Quãng Nam', '12/12/1999', 2);
 
 --
--- Chỉ mục cho các bảng đã đổ
+-- Indexes for dumped tables
 --
 
 --
--- Chỉ mục cho bảng `bandoc`
+-- Indexes for table `bandoc`
 --
 ALTER TABLE `bandoc`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `chitietmuon`
+-- Indexes for table `chitietmuon`
 --
 ALTER TABLE `chitietmuon`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `kesach`
+-- Indexes for table `kesach`
 --
 ALTER TABLE `kesach`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `sach`
+-- Indexes for table `sach`
 --
 ALTER TABLE `sach`
   ADD PRIMARY KEY (`id`);
 
 --
--- Chỉ mục cho bảng `taikhoan`
+-- Indexes for table `taikhoan`
 --
 ALTER TABLE `taikhoan`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT cho các bảng đã đổ
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT cho bảng `bandoc`
+-- AUTO_INCREMENT for table `bandoc`
 --
 ALTER TABLE `bandoc`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT cho bảng `chitietmuon`
+-- AUTO_INCREMENT for table `chitietmuon`
 --
 ALTER TABLE `chitietmuon`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT cho bảng `kesach`
+-- AUTO_INCREMENT for table `kesach`
 --
 ALTER TABLE `kesach`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
--- AUTO_INCREMENT cho bảng `sach`
+-- AUTO_INCREMENT for table `sach`
 --
 ALTER TABLE `sach`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT cho bảng `taikhoan`
+-- AUTO_INCREMENT for table `taikhoan`
 --
 ALTER TABLE `taikhoan`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
