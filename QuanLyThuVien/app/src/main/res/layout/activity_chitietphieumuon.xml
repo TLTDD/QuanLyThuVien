@@ -87,6 +87,7 @@
             android:layout_height="wrap_content">
 
             <TextView
+                android:id="@+id/elNgayTra"
                 android:layout_width="wrap_content"
                 android:text="Ngày ngày trả"
                 android:textSize="16sp"

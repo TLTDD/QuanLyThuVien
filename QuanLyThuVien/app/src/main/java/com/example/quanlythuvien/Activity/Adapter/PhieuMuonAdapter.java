@@ -5,6 +5,7 @@ import static android.app.Activity.RESULT_OK;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
 
@@ -48,7 +50,7 @@ public class PhieuMuonAdapter extends BaseAdapter {
     }
 
     public class ViewHolder{
-        public TextView tvTenSachMuon,tvNguoiMuon,tvMSVMuon,tvNgayMuon,tvNgayTra,tvTinhTrang;
+        public TextView tvTenSachMuon,tvNguoiMuon,tvMSVMuon,tvNgayMuon,tvNgayTra,tvTinhTrang, btnTraSach;
         ImageView btnDelete;
     }
 
@@ -66,6 +68,7 @@ public class PhieuMuonAdapter extends BaseAdapter {
             viewHolder.tvNgayTra = convertView.findViewById(R.id.tvNgayTra);
             viewHolder.tvTinhTrang = convertView.findViewById(R.id.tvTinhTrang);
             viewHolder.btnDelete = convertView.findViewById(R.id.btndeletePhieuMuon);
+            viewHolder.btnTraSach = convertView.findViewById(R.id.btnTraSach);
             convertView.setTag(viewHolder);
         }
         else {
@@ -78,10 +81,20 @@ public class PhieuMuonAdapter extends BaseAdapter {
         viewHolder.tvNgayMuon.setText(phieumuon.getNgayMuon());
         viewHolder.tvNgayTra.setText(phieumuon.getNgayHetHan());
         viewHolder.tvTinhTrang.setText(phieumuon.getTrangThai());
+        if(phieumuon.getTrangThai().equals("Đã trả")){
+            viewHolder.btnTraSach.setEnabled(false);
+            viewHolder.btnTraSach.setBackgroundColor(Color.parseColor("#c1c1c1"));
+        }
         viewHolder.btnDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 XacNhanXoa(phieumuon.getHoTen(),phieumuon.getMaSach());
+            }
+        });
+        viewHolder.btnTraSach.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                XacNhanTraSach(phieumuon.getHoTen(),phieumuon.getMaSach());
             }
         });
         return convertView;
@@ -94,6 +107,24 @@ public class PhieuMuonAdapter extends BaseAdapter {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 context.DeletePhieuMuon(maSach);
+            }
+        });
+        dialogXoa.setNegativeButton("Không", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+        dialogXoa.show();
+    }
+
+    private void XacNhanTraSach(String ten,final String maSach){
+        AlertDialog.Builder dialogXoa = new AlertDialog.Builder(context.getActivity());
+        dialogXoa.setMessage("Bạn có muốn xác nhận "+ten+" trả sách không?");
+        dialogXoa.setPositiveButton("Có", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                context.UpdatePhieuMuon(maSach);
             }
         });
         dialogXoa.setNegativeButton("Không", new DialogInterface.OnClickListener() {

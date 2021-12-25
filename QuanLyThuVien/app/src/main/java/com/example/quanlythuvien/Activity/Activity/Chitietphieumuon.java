@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,7 +35,7 @@ public class Chitietphieumuon extends AppCompatActivity {
     EditText edtTenBanDoc,edtNgayMuon,edtNgayTra,edtMSSV;
     Button btnxacnhan,btntrove,btnChonSV;
     ImageButton ivNgayMuon,ivNgayTra;
-    TextView txtNgayMuon, txtNgayTra;
+    TextView txtNgayMuon, txtNgayTra,elNgayTra;
     int REQUEST_BANDOC;
     int maPM = 0;
     int maSach = 0;
@@ -98,7 +99,6 @@ public class Chitietphieumuon extends AppCompatActivity {
                 }
                 else {
                     AddPhieuMuon();
-                    finish();
                 }
             }
         });
@@ -113,7 +113,7 @@ public class Chitietphieumuon extends AppCompatActivity {
 
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                String dateString = dayOfMonth + "/" + month + "/" + year;
+                String dateString = year + "-" + (month+1) + "-" + dayOfMonth;
                 txtNgayMuon.setText(dateString);
             }
         },year,month, day);
@@ -129,7 +129,7 @@ public class Chitietphieumuon extends AppCompatActivity {
 
             @Override
             public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
-                String dateString = dayOfMonth + "/" + month + "/" + year;
+                String dateString = year + "-" + (month+1) + "-" + dayOfMonth;
                 txtNgayTra.setText(dateString);
             }
         },year,month, day);
@@ -137,14 +137,17 @@ public class Chitietphieumuon extends AppCompatActivity {
     }
     private void AddPhieuMuon(){
         RequestQueue requestQueue = Volley.newRequestQueue(this);
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.Duongdanthemphieu, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 if(response.contains("success")){
                     Toast.makeText(getApplicationContext(), "Đã thêm thành công !", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
                 else{
-                    Toast.makeText(getApplicationContext(), "Xảy ra lỗi !", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Lỗi ngày trả sách!! !", Toast.LENGTH_SHORT).show();
+                    elNgayTra.setTextColor(Color.parseColor("#FF0303"));
                 }
 
             }
@@ -180,5 +183,6 @@ public class Chitietphieumuon extends AppCompatActivity {
         btnxacnhan = findViewById(R.id.btnXacNhan);
         btntrove = findViewById(R.id.btnHuy);
         btnChonSV = findViewById(R.id.btnChonBanDoc);
+        elNgayTra = findViewById(R.id.elNgayTra);
     }
 }

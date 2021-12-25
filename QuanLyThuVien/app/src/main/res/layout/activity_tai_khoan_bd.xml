@@ -130,7 +130,7 @@
                 android:fontFamily="@font/cucho"
                 android:text="Đăng xuất"
                 android:textSize="18dp"
-                android:textColor="@color/black" />
+                android:textColor="#fff" />
             <TextView
                 android:fontFamily="@font/serif"
                 android:layout_gravity="center"

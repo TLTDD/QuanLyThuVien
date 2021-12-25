@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ListView;
 
 import androidx.annotation.NonNull;
@@ -75,6 +76,35 @@ public class MuonFragment extends Fragment {
             @Override
             public void onErrorResponse(VolleyError error) {
                 CheckConnection.ShowToast_Short(getActivity(),"Xóa không thành công");
+            }
+        }){
+            @Nullable
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String,String> params = new HashMap<>();
+                params.put("maSach",String.valueOf(maSach));
+                return params;
+            }
+        };
+        requestQueue.add(stringRequest);
+    }
+
+    public void UpdatePhieuMuon(String maSach){
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Server.DuongdanUpdatephieumuon, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                if(response.trim().equals("success")){
+                    CheckConnection.ShowToast_Short(getActivity(),"Update thành công");
+                    GetDuLieuLoaiSP();
+                }else {
+                    CheckConnection.ShowToast_Short(getActivity(),"Update không thành công");
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                CheckConnection.ShowToast_Short(getActivity(),"Update không thành công");
             }
         }){
             @Nullable
